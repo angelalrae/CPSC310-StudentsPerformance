@@ -195,7 +195,7 @@ def gaussian(x, mean, sdev):
     parameter mean is the mean of values in the column
     parameter sdev is the standard deviation of values in the column
     returns the posterior/conditional probability
-    all code copied from Gina's notes
+    function copied from Gina's notes
     '''
     first, second = 0, 0
     if sdev > 0:
