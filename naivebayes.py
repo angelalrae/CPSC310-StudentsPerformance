@@ -1,5 +1,7 @@
 import utils
 import tabulate
+import numpy as np 
+from copy import deepcopy
 
 def main():
     table = utils.read_table("StudentsPerformance.csv")
@@ -12,11 +14,13 @@ def main():
     train_set = utils.get_training_set(table, test_set)
     
     # make prediction about math score class
-    class_label = "math score class"
+    class_label = "writing score class"
     attributes = ['gender', 'race/ethnicity', 'parental level of education', 'lunch', 'test preparation course']
-    for test_instance in test_set:
-        prediction = classify_using_naive_bayes(train_set, header, test_instance, class_label, attributes)
-        print("prediction:", prediction, "actual:", test_instance[header.index("math score class")])
+#     for test_instance in test_set:
+#         prediction = classify_using_naive_bayes(train_set, header, test_instance, class_label, attributes)
+        # print("prediction:", prediction, "actual:", test_instance[header.index("math score class")])
+
+    subsampling_accuracy(table, header, 3, class_label, attributes)
 
 def clean_data(table, header):
     '''
@@ -171,5 +175,122 @@ def compute_class_probability(prior, posteriors_list, class_index):
     
     return class_probability
 
+def subsampling_accuracy(table, header, k, class_label, attr_list):
+    '''
+    tests the accuracy of Naive Bayes classifier using random subsampling to create test sets
+    '''
+    accuracies = []
+    
+    # For k trials, partition data into train and test then use linear regression and kNN 
+    #    to predict for test set. Compute accuracy and error rate for both sets of predictions
+    for i in range(k):
+        # split table into train and test sets
+        train, test = utils.compute_holdout_partitions(table)
+
+        instance_accuracy = compute_naive_bayes_accuracy(train, test, header, attr_list, class_label)
+        accuracies.append(instance_accuracy)
+    
+    # compute average accuracy
+    accuracy = np.mean(accuracies)
+
+    print('\n===========================================\nPredictive Accuracy\
+    \n===========================================')
+    print("Random Subsample (k=10, 2:1 Train/Test)")
+    print("Naive Bayes: accuracy = ", round(accuracy, 2), ", error rate = ", round(1-accuracy, 2))
+
+def compute_naive_bayes_accuracy(train, test, header, attributes_list, class_label):
+    '''
+    for a training/test set pair, computes the accuracy of the naive bayes classification
+    parameter train is the training set of data (a table) for linear regression
+    parameter test is the test set of data (a table) to classify
+    parameters table and header are the data table and a list of the attributes in order, respectively
+    returns the accuracy
+    '''
+    predictions = []
+
+    # for each instance in the training set, compute naive bayes classifications
+    for instance in test:
+        predictions.append(classify_using_naive_bayes(train, header, instance, "math score class", attributes_list))
+
+    # get actual values
+    actuals = utils.get_column(test, header.index("math score class"))
+    
+    # compute accuracy using predicted values and actuals
+    accuracy = compute_accuracy(predictions, actuals)
+
+    return accuracy
+
+def compute_accuracy(predictions, actuals):
+    '''
+    given parallel lists of predicted classes and actual classes, computes the accuracy
+    returns the average of the class accuracies
+    '''
+
+    # get list of all possible classifications from predictions and actuals
+    categories = utils.get_unique_items(deepcopy(actuals), deepcopy(predictions))
+    categories = sorted(categories)
+    
+    # create confusion matrix (actual vs. predicted table)
+    confusion_matrix = create_confusion_matrix(categories, actuals, predictions)
+    
+    # for each class label, compute the accuracy
+    accuracies = []
+    for class_label in categories:
+        class_index = categories.index(class_label)
+        accuracy = compute_class_accuracy(confusion_matrix, class_index)
+        accuracies.append(accuracy)
+    
+    # return the average of the class accuracies
+    return np.mean(accuracies)
+
+def create_confusion_matrix(categories, actuals, predictions):
+    '''
+    creates a confusion maxtrix of actual versus predicted values
+    parameter categories is a list of all unique classes
+    parameter actuals is a list of the actual class values from the dataset
+    parameter predictions is a list of the predicted values from the classifier
+    returns a 2D list of actuals x predictions
+    '''
+    # initialize table with zeros for each cell
+    confusion_matrix = [[0 for i in range(len(categories))] for i in range(len(categories))]
+
+    # loop through list indices, 
+    #   find the actual category and predicted category, then increment appropriate cell
+    for index in range(len(actuals)):
+        actual_index = 'A' # will throw error if somehow incorrect
+        predicted_index = 'A'
+        for class_label in categories:
+            if class_label == actuals[index]:
+                actual_index = categories.index(class_label)
+            if class_label == predictions[index]:
+                predicted_index = categories.index(class_label)
+        
+        confusion_matrix[actual_index][predicted_index] += 1
+        
+    return confusion_matrix
+
+def compute_class_accuracy(table, class_index):
+    '''
+    uses the binary accuracy equation (accuracy = TP + TN / P + N) to compute the accuracy of a single class
+    parameter table is the predictions versus actuals table
+    parameter class_index is an int, the index of the class to compute accuracy for
+    returns the class accuracy as a double
+    '''
+    true_positives = table[class_index][class_index]
+    
+    # compute true negatives (not classified as class and actually not in the class)
+    true_negatives = 0
+    for r_index,row in enumerate(table):
+        for v_index,value in enumerate(row):
+            if r_index != class_index and v_index != class_index:
+                true_negatives += value
+
+    # sum all values in table
+    total = 0
+    for row in table:
+        for value in row:
+            total += value
+    
+    return (true_positives + true_negatives) / total
 if __name__ == "__main__":
     main()
