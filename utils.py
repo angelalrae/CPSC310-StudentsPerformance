@@ -30,7 +30,7 @@ def read_table(filename):
         # print(values)
         convert_to_numeric(values)
         item_list = values
-        table.append(item_list);
+        table.append(item_list)
 
     infile.close()
     return table
