@@ -8,6 +8,7 @@ import math
 import utils2 as utils
 import utils as u
 import numpy as np
+import random
 
 LEAF = 'leaf'
 SPLIT = 'split'
@@ -20,15 +21,21 @@ class TreeNode(object):
         self.table = table
         self.node_type = None
         self.split_index = None
-        self.leaf_value = None
+        self.leaf_class = None
         self.header = header
+
+        if first:
+            full_table = []
+            for i, col in enumerate(header[:-1]):
+                full_table.append(utils.unique([x[i] for x in table]))
         
         classes = [x[-1] for x in table]
         c_types = utils.unique(classes)
         
         if len(c_types) == 1:
+            ut = utils.unique_table(self.table)
             self.node_type = LEAF
-            self.leaf_value = c_types[0]
+            self.leaf_class = c_types[0]
 
         else:
             self.split_index = max_gain(table, header)
@@ -41,7 +48,9 @@ class TreeNode(object):
                     self.branches[split_vals[i]] = TreeNode(bran, header, first=False, full_table=full_table)
             else:
                 self.node_type = LEAF
-                self.leaf_value = np.average([x[-1] for x in self.table])
+                self.leaf_class = utils.majority_vote(table)
+                ut = utils.unique_table(self.table)
+
     
     def classify(self, instance):
         '''
@@ -49,15 +58,13 @@ class TreeNode(object):
             classifies it as.
         '''
         if self.node_type == LEAF:
-            return self.leaf_value
+            return self.leaf_class
         else:
             new_att = instance[self.split_index]
             if new_att in self.branches:
                 return self.branches[new_att].classify(instance)
             else:
-                return np.average([x[-1] for x in self.table])
-                    
-    
+                return utils.majority_vote(self.table)
 #------------------------------------------------------
 #   Step 1: Interview Classifier
 #------------------------------------------------------
@@ -129,14 +136,16 @@ def test_tree(header, training_table, test_table):
         negatives, false positives and false negatives.
     '''
     model = TreeNode(training_table, header)
-    errs = []
+    con_mat = [[0 for x in range(4)] for y in range(4)]
     
     for inst in test_table:
-        predicted = model.classify(inst)
-        actual = inst[-1]
-        errs.append(abs(predicted-actual))
+        p = model.classify(inst) - 1
+        a = inst[-1] - 1
+        if p != -1:
+            con_mat[a][p] += 1
         
-    return errs
+    return con_mat
+    
 
 def c_matrix(tp, tn, fp, fn):  
     '''
@@ -161,33 +170,82 @@ def k_cross(header, table, k):
         groups together as a training set to create a tree to classify instances
         in the fold. Prints a confusion matrix of the resulting accuracy.
     '''
-    fold_size = len(table) // k
-    remainder = len(table) % k
+    random.shuffle(table)
     i = 0
-    lower = 0
-    folds = []
-    errors = []
+    folds = [[] for x in range(k)]
 
-    while i < len(table):
-        i += fold_size
-        if remainder > 0:
-            i += 1
-            remainder -= 1
-        folds.append(table[lower:i])
-        lower = i
+    stratified = [a for b in [[x for x in table if x[-1] == y] for y in range(1, 5)] for a in b]
+    j = 0
+
+    for s in stratified:
+        folds[j].append(s)
+        j = (j + 1) % k
+
+    con_mat = [[0 for x in range(4)] for y in range(4)]
     for i in folds:
         test = i
         train = [x for y in folds for x in y if y != test]
-        errors += test_tree(header, train, test)
-    return np.mean(errors)
+        temp_mat = test_tree(header, train, test)
+        con_mat = utils.add_tables(con_mat, temp_mat)
+
+    raw_c_mat(con_mat)
+    get_mat_accuracy(con_mat)
+
+def raw_c_mat(outcome):
+    n = len(outcome)
+    for i in range(n+1):
+        print('%4d' % i, end='')
+    print()
+    
+    for i in range(n):
+        print('%4d' % (i + 1), end='')
+        for j in range(n):
+            print('%4d' % outcome[i][j], end='')
+        print()
+
+def get_mat_accuracy(con_mat):
+    total = sum([sum(x) for x in con_mat])
+
+    tp = 0
+    tn = 0
+    fp = 0
+    fn = 0
+
+    for i in range(len(con_mat)):
+        newtp, newtn, newfp, newfn = one_mpg_acc(i, con_mat, total)
+        tp += newtp
+        tn += newtn
+        fp += newfp
+        fn += newfn
+    
+    c_matrix(tp, tn, fp, fn)
+
+def one_mpg_acc(i, con_mat, total):
+    tp = con_mat[i][i]
+    fp = sum(con_mat[i]) - tp
+    fn = sum([x[i] for x in con_mat]) - tp
+    tn = total - (tp + fp + fn)
+    return tp, tn, fp, fn
 
 def group_scores(students):
     outlist = []
+    rawscores = [sum([int(x.strip('"')) for x in s[-3:]]) for s in students]
+    q1 = np.quantile(rawscores, 0.25)
+    q2 = np.quantile(rawscores, 0.50)
+    q3 = np.quantile(rawscores, 0.75)
 
     for s in students:
         outlist.append([x.strip('"') for x in s[:-3]])
-        score = np.mean([int(x.strip('"')) for x in s[-3:]])
-        outlist[-1].append(score)
+        score = sum([int(x.strip('"')) for x in s[-3:]])
+        if score < q1:
+            c = 1
+        elif score < q2:
+            c = 2
+        elif score < q3:
+            c = 3
+        else:
+            c = 4
+        outlist[-1].append(c)
     return outlist
 
 def main():
@@ -197,5 +255,5 @@ def main():
     students = group_scores(students[1:])
     # t_head, t_tab = clean_titanic(tname)
     out = k_cross(header, students, 10)
-    print("Mean AbsoluteError: ", out)
+    # print("Mean AbsoluteError: ", out)
 main()
