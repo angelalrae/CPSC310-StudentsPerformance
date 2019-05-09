@@ -245,4 +245,3 @@ def main():
     print("\n\n                      Writing Scores")
     print("-----------------------------------------------------------------")
     k_cross_var(writetab, r, k, numtrials)
-main()
