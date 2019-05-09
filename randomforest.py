@@ -15,11 +15,45 @@ UNSPLIT = 'unsplit'
 class Forest(object):
     def __init__(self, m):
         self.m = m
-        self.trees = []
-        self.accuracy = -1
+        self.forest_list = []
+        self.min_index = None
 
-    def add_tree(self, tree):
-        self.trees.append(tree)
+    def add_tree(self, tree, confusion_matrix):
+        '''
+        parameter tree is a TreeNode object
+        parameter confusion_matrix is a tuple containing tp, tn, fp, and fn
+        '''
+        # store each new tree with it's confusion matrix as a 
+        # dictionary in the forest list
+        new_tree = {}
+        new_tree["tree"] = tree
+        new_tree["con_mat"] = confusion_matrix
+        new_tree["accuracy"] = get_mat_accuracy(confusion_matrix)
+        self.forest_list.append(new_tree)
+
+    def min_accuracy(self):
+        '''
+        iterates through all trees and checks if accuracy is less than current min
+        sets min_index value and returns minimum of accuracy values
+        '''
+        min_acc = self.forest_list[0]["accuracy"]
+        new_min_index = 0
+        for index,tree in enumerate(self.forest_list):
+            accuracy = tree["accuracy"]
+            if accuracy < min_acc:
+                min_acc = accuracy
+                new_min_index = index
+
+        self.min_index = new_min_index
+        return min_acc
+
+    def replace(self, new_tree, confusion_matrix):
+        '''
+        remove old tree from forest, add new one, recalculate min accuracy
+        '''
+        self.forest_list.pop(self.min_index)
+        self.add_tree(new_tree, confusion_matrix)
+        self.min_accuracy()
 
 class TreeNode(object):
     def __init__(self, table, header, first=True, full_table=None):
@@ -235,7 +269,8 @@ def get_mat_accuracy(con_mat):
         fp += newfp
         fn += newfn
     
-    c_matrix(tp, tn, fp, fn)
+    # print_c_matrix(tp, tn, fp, fn)
+    return acc(tp, tn, fp, fn)
 
 def one_mpg_acc(i, con_mat, total):
     tp = con_mat[i][i]
@@ -244,7 +279,7 @@ def one_mpg_acc(i, con_mat, total):
     tn = total - (tp + fp + fn)
     return tp, tn, fp, fn
 
-def c_matrix(tp, tn, fp, fn):  
+def print_c_matrix(tp, tn, fp, fn):  
     '''
         Prints a formatted confusion matrix.
     '''
@@ -306,27 +341,27 @@ def main():
     # get stratified list for sample and test set for ensemble
     test_set, remainder = compute_stratified(students, header, 3)
     
-    # initialize confusion matrix for whole ensemble
-    confusion_matrix = [[0 for x in range(4)] for y in range(4)]
-    
     # use bootstrap sample to train decision trees
-    n = 4 # number of decision trees to generate
-    m = 2 # number of best trees to save
-    f = 3 # number of attributes to randomly select
-
+    n = 6 # number of decision trees to generate
+    m = 3 # number of best trees to save
+    
     mForest = Forest(m)
 
-    # create N decision trees
-    for _ in range(n):
+    # create N decision trees, saving best M in forest
+    for i in range(n):
         # use bagging to get training set, then create tree
         train_set, validation_set = compute_bootstrap_sample(remainder)
         tree, temp_matrix = test_tree(header, train_set, validation_set)
-        mForest.add_tree(tree)
+            # temp matrix is a tuple containing tp, tn, fp, and fn
 
-        confusion_matrix = utils.add_tables(confusion_matrix, temp_matrix)
-
-    raw_c_mat(confusion_matrix)
-    get_mat_accuracy(confusion_matrix)
+        # once m trees, check accuracy of new tree before adding it to forest
+        if (i+1) > m:
+            current_accuracy = get_mat_accuracy(temp_matrix)
+            print(current_accuracy, mForest.min_accuracy())
+            if current_accuracy > mForest.min_accuracy():
+                mForest.replace(tree, temp_matrix)
+        else:
+            mForest.add_tree(tree, temp_matrix)
 
 if __name__ == "__main__":
     main()
