@@ -369,14 +369,13 @@ def main():
     
     # get stratified list for sample and test set for ensemble
     test_set, remainder = compute_stratified(students, header, 3)
-    
-    # use bootstrap sample to train decision trees
+        
     n = 10 # number of decision trees to generate
     m = 5 # number of best trees to save
-    
-    mForest = Forest(m)
+    mForest = Forest(m) # initialize Forest object
 
-    # create N decision trees, saving best M in forest
+    # create N decision trees using bootstrap sample to train
+    # save best M in forest
     for i in range(n):
         # use bagging to get training set, then create tree
         train_set, validation_set = compute_bootstrap_sample(remainder)
