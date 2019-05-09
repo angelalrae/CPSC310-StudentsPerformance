@@ -324,6 +324,8 @@ def print_c_matrix(tp, tn, fp, fn):
     print('         |-------------------------------------|\n')
     print('              Accuracy     : %.5f' % acc(tp, tn, fp, fn))
     print('              Standard Err : %.5f\n' % s_err(tp, tn, fp, fn))
+    print('              Precision : %.5f\n' % precision(tp, tn, fp, fn))
+    print('              Recall : %.5f\n' % recall(tp, tn, fp, fn))
 
 def acc(tp, tn, fp, fn):
     '''
@@ -343,6 +345,12 @@ def s_err(tp, tn, fp, fn):
     ttl = correct + incorrect
     err = math.sqrt((correct/ttl * incorrect/ttl) / ttl)
     return err
+
+def precision(tp, tn, fp, fn):
+    return tp / (tp + fp)
+
+def recall(tp, tn, fp, fn):
+    return tp / (tp + fn)
 
 def compute_stratified(table, header, k):
     '''
@@ -370,8 +378,8 @@ def main():
     # get stratified list for sample and test set for ensemble
     test_set, remainder = compute_stratified(students, header, 3)
         
-    n = 10 # number of decision trees to generate
-    m = 5 # number of best trees to save
+    n = 100 # number of decision trees to generate
+    m = 80 # number of best trees to save
     mForest = Forest(m) # initialize Forest object
 
     # create N decision trees using bootstrap sample to train
