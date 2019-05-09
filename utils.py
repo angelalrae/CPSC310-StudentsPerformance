@@ -28,6 +28,7 @@ def read_table(filename):
         line = line.strip() # strips whitespace characters
         #break line into individual strings using comma delimiter
         values = line.split(",")
+        strip_quotation_marks_list(values)
         # print(values)
         convert_to_numeric(values)
         item_list = values

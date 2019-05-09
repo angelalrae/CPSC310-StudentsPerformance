@@ -240,3 +240,4 @@ def main():
     print("\n\n                      Writing Scores")
     print("-----------------------------------------------------------------")
     c_matrix(w[TP], w[TN], w[FP], w[FN])
+main()
