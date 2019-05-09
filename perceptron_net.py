@@ -1,3 +1,10 @@
+# Alli Fellger and Angela Rae
+# filename: perceptron_net.py
+#   reads from an input file 'perf_nums_v2.csv' and prints out three confusion matrices
+#   representing the predictions made by a single-layer perceptron neural network as to
+#   whether a student passed or failed the math, reading and writing exams documented
+#   in 'perf_nums_v2.csv'
+
 import random
 import numpy as np
 import math
@@ -8,6 +15,10 @@ FP = 'false_pos'
 FN = 'false_neg'
 
 def read_students(fname):
+    '''
+        Read in the student instances from the file titled fname
+        return header, instances
+    '''
     f = open(fname, 'r')
     lines = [x.strip('\n').strip(' ').split(',') for x in f]
     header = lines[0]
@@ -15,19 +26,30 @@ def read_students(fname):
     return header, insts
 
 def dot(x, y):
+    '''
+        return dot product of x and y
+    '''
     return sum([x[i] * y[i] for i in range(len(x))])
 
 def one_inst(weights, instance, r):
+    '''
+        return list of adjusted weights
+    '''
     actual = instance[-1]
     yt = dot(weights, instance[:-1])
-    wnew = [w + (r * (actual - yt)) for w in weights]
-    # print('    >', wnew)
     return [w + (r * (actual - yt)) for w in weights]
 
 def rand_weights(n):
+    '''
+        return n random weights
+    '''
     return [random.randint(0, 100)/100 for x in range(n)]
 
 def train_perceptrons(table, r):
+    '''
+        modify a set of random weights for every instance in the
+        table, at learning rate r
+    '''
     n = len(table[0])
     weights = rand_weights(n-1)
     for inst in table:
@@ -35,6 +57,10 @@ def train_perceptrons(table, r):
     return weights
 
 def threshold_test(weights, table):
+    '''
+        Given a set of weights, return the optimal threshold
+        for pass/fail.
+    '''
     bestacc = 0
     besterr = 0
     bestt = 0
@@ -48,6 +74,11 @@ def threshold_test(weights, table):
     return bestacc, besterr, bestt
 
 def learn(table, r, k):
+    '''
+        Find the best pass/fail threshold and best set
+        of weights for table over k trials with learning
+        rate r.
+    '''
     bestacc = 0
     bestt = 0
     bestweights = []
@@ -58,11 +89,15 @@ def learn(table, r, k):
         if acc > bestacc:
             bestweights = weights
             bestt = t
-            # print('>>>>> newacc=', acc)
             bestacc = acc
     return bestt, bestweights
 
 def k_cross_var(table, r, k, numtrials):
+    '''
+        Use k-cross validation to test the model with 
+        numtrials trials per training set, k folds and
+        learning rate r.
+    '''
     results = {TP:0, TN:0, FP:0, FN:0}
 
     t = [x for x in table if x[-1] == 1]
@@ -97,6 +132,9 @@ def k_cross_var(table, r, k, numtrials):
     return results, acc(results), s_err(results)
 
 def c_matrix(r):  
+    '''
+        Print out the confusion matrix based on the dictionary r
+    '''
     tp = r[TP]
     tn = r[TN]
     fp = r[FP]
@@ -115,8 +153,11 @@ def c_matrix(r):
     print('              Accuracy     : %.5f' % acc(r))
     print('              Standard Err : %.5f\n' % s_err(r))
 
-
 def classify(weights, instance, t):
+    '''
+        classify the instance as 0 or 1 based on
+        the weight set and the threshold t.
+    '''
     pred = dot(weights, instance[:-1])
     if pred < t:
         return 0
@@ -150,6 +191,11 @@ def s_err(r):
     return err
 
 def assess_err(weights, table, t):
+    '''
+        calculate the accurracy and standard error
+        of classifying the predictions by using 
+        weights and pass/fail threshold t.
+    '''
     results = {TP:0, TN:0, FP:0, FN:0}
     for inst in table:
         result = classify(weights, inst, t)
@@ -165,11 +211,38 @@ def assess_err(weights, table, t):
                 results[FN] += 1
     return acc(results), s_err(results)
 
+def final_col_sort(instances, predcol):
+    '''
+        relocate the predcol to the end of each row within
+        instances.
+    '''
+    newints = []
+    for x in instances:
+        newints.append(x[:predcol] + x[predcol+1:] + [x[predcol]])
+    return newints
+
 def main():
     f = 'perf_nums_v2.csv'
     r = 0.1
     k = 10
     numtrials = 10
     header, insts = read_students(f)
-    print(k_cross_var(insts, r, k, numtrials))
+    mathtab = final_col_sort(insts, 4)
+    readtab = final_col_sort(insts, 5)
+    writetab = final_col_sort(insts, 6)
+
+    print("\n\n-----------------------------------------------------------------")
+    print("            Perceptron Net Pass/Fail Predictions")
+    print("-----------------------------------------------------------------")
+    print("\n\n                       Math Scores")
+    print("-----------------------------------------------------------------")
+    k_cross_var(mathtab, r, k, numtrials)
+    print("-----------------------------------------------------------------")
+    print("\n\n                      Reading Scores")
+    print("-----------------------------------------------------------------")
+    k_cross_var(readtab, r, k, numtrials)
+    print("-----------------------------------------------------------------")
+    print("\n\n                      Writing Scores")
+    print("-----------------------------------------------------------------")
+    k_cross_var(writetab, r, k, numtrials)
 main()

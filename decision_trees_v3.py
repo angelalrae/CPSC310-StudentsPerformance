@@ -184,16 +184,6 @@ def k_cross(header, table, k):
 
     return results
 
-def pass_fail_one_test(table, predict_col, header):
-    newtab = []
-    for student in table:
-        newrow = []
-        for i, h in enumerate(header):
-            if i != predict_col and 'score' not in h and 'pass' not in h:
-                newrow.append(student[i])
-        newtab.append(newrow + [student[predict_col]])
-    return newtab
-
 def pass_fail_all_test(table, predict_col, header):
     newtab = []
     for student in table:
@@ -236,11 +226,19 @@ def main():
     r = k_cross(header_one + ['pass_reading'], reading_table, k)
     w = k_cross(header_one + ['pass_writing'], writing_table, k)
 
-    print("\n\nMATH PASS/FAIL PREDICTIONS")
+    print("\n\n-----------------------------------------------------------------")
+    print("              Decision Tree Pass/Fail Predictions")
+    print("-----------------------------------------------------------------")
+    print("\n\n                       Math Scores")
+    print("-----------------------------------------------------------------")
     c_matrix(m[TP], m[TN], m[FP], m[FN])
-    print("\n\nREADING PASS/FAIL PREDICTIONS")
+    print("-----------------------------------------------------------------")
+    print("\n\n                      Reading Scores")
+    print("-----------------------------------------------------------------")
     c_matrix(r[TP], r[TN], r[FP], r[FN])
-    print("\n\nWRITING PASS/FAIL PREDICTIONS")
+    print("-----------------------------------------------------------------")
+    print("\n\n                      Writing Scores")
+    print("-----------------------------------------------------------------")
     c_matrix(w[TP], w[TN], w[FP], w[FN])
 
 main()
