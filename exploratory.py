@@ -62,8 +62,9 @@ def make_dot_chart(table, s_att, s_ops, s_labels, chart_title):
     
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(fname)
-    plt.close()
+    # plt.savefig(fname)
+    plt.show()
+    # plt.close()
 
 def main():
     f = 'StudentsPerformance.csv'
@@ -71,5 +72,3 @@ def main():
     make_dot_chart(s, 0, ['female', 'male'], ["Female", "Male"], "Gender")
     make_dot_chart(s, 3, ['standard', 'free/reduced'], ["Standard", "Free/Reduced"], "Lunch Status")
     make_dot_chart(s, 4, ['completed', 'none'], ["Prep Course", "No Prep Course"], "Preparation Course Completion")
-
-main()

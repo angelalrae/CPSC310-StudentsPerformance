@@ -5,7 +5,6 @@
 #   test scores
 
 import math
-import utils2 as utils
 import utils as u
 import numpy as np
 import random
@@ -30,7 +29,7 @@ class TreeNode(object):
         self.header = header
         
         classes = [x[-1] for x in table]
-        c_types = utils.unique(classes)
+        c_types = u.unique(classes)
         
         if len(c_types) == 1:
             self.node_type = LEAF
@@ -42,14 +41,14 @@ class TreeNode(object):
         else:
             self.split_index = max_gain(table, header)
             if self.split_index != -1:
-                split_vals = utils.unique(table, col=self.split_index)
+                split_vals = u.unique(table, col=self.split_index)
                 self.node_type = SPLIT
                 branch_tabs = [[y for y in table if y[self.split_index] == x] for x in split_vals]
                 for i, bran in enumerate(branch_tabs):
                     self.branches[split_vals[i]] = TreeNode(bran, header)
             else:
                 self.node_type = LEAF
-                self.leaf_class = utils.majority_vote(table)
+                self.leaf_class = u.majority_vote(table)
                 # print("Creating leaf: ")
                 # print(self.table)
                 # print(self.leaf_class)
@@ -66,7 +65,7 @@ class TreeNode(object):
             if new_att in self.branches:
                 return self.branches[new_att].classify(instance)
             else:
-                return utils.majority_vote(self.table)
+                return u.majority_vote(self.table)
 #------------------------------------------------------
 #   Step 1: Interview Classifier
 #------------------------------------------------------
@@ -77,7 +76,7 @@ def entropy(table):
     '''
     e = 0
     classes = [x[-1] for x in table]
-    c_types = utils.unique(classes)
+    c_types = u.unique(classes)
     for c in c_types:
         c_ratio = sum([1 for x in classes if x == c])/len(classes)
         if c_ratio != 0:
@@ -90,7 +89,7 @@ def info_gain(table, att_i):
     '''
     e_start = entropy(table)
     e_new = 0
-    atts = utils.unique([x[att_i] for x in table])
+    atts = u.unique([x[att_i] for x in table])
     t_size = len(table)
     for a in atts:
         partition = [x for x in table if x[att_i] == a]
@@ -105,7 +104,7 @@ def max_gain(table, header):
     '''
     i_gains = {}
     for i, col in enumerate(header[:-1]):
-        if not utils.unanimous(table, i):
+        if not u.unanimous(table, i):
             i_gains[info_gain(table, i)] = i
     if len(i_gains) != 0:
         return i_gains[max(i_gains)]
