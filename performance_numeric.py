@@ -8,13 +8,28 @@ def clean_data(fname, ofname):
     fout.write(fin.readline().replace(' ', '_')[:-1] + ",pass_math,pass_reading,pass_writing\n")
     for line in fin:
         line = [x.strip('"').strip('\n') for x in line.strip(' ').strip("'").split(',')]
-        ofline = "%s,%d," % (line[0], edlevel(line[2])) + ','.join(line[3:-3])
+        ofline = "%d,%d,%d,%d" % (gender_nums(line[0]), edlevel(line[2]), lunchsc(line[3]), testprp(line[4])) + ','.join(line[5:-3])
         pfs = ''
         for x in line[-3:]:
             g = grade(x)
             pfs += (',' + pf(g))
             ofline += (',' + g)
         fout.write(ofline + pfs + '\n')
+
+def gender_nums(gender):
+    if gender == 'male':
+        return 1
+    return 2
+
+def lunchsc(lunch):
+    if lunch == 'standard':
+        return 2
+    return 1
+
+def testprp(testprep):
+    if testprep == 'completed':
+        return 2
+    return 1
 
 def edlevel(parent_ed):
     college = ["bachelor's degree", "master's degree"]
@@ -46,7 +61,7 @@ def pf(grade):
 
 def main():
     fin = 'StudentsPerformance.csv'
-    fout = 'graded_performance_a.csv'
+    fout = 'perf_nums.csv'
     clean_data(fin, fout)
 
 main()

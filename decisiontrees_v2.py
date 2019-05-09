@@ -14,6 +14,11 @@ LEAF = 'leaf'
 SPLIT = 'split'
 UNSPLIT = 'unsplit'
 
+TP = 'true_pos'
+TN = 'true_neg'
+FP = 'false_pos'
+FN = 'false_neg'
+
 
 class TreeNode(object):
     def __init__(self, table, header, first=True, full_table=None):
@@ -129,22 +134,28 @@ def acc(tp, tn, fp, fn):
     ttl = correct + incorrect
     return correct/ttl
 
-def test_tree(header, training_table, test_table):
+def test_tree(header, training_table, test_table, result):
     '''
         given training and test sets, generate a decision tree and
         return a tuple containing the count of true positives, true
         negatives, false positives and false negatives.
     '''
     model = TreeNode(training_table, header)
-    con_mat = [[0 for x in range(4)] for y in range(4)]
-    
     for inst in test_table:
-        p = model.classify(inst) - 1
-        a = inst[-1] - 1
-        if p != -1:
-            con_mat[a][p] += 1
+        p = model.classify(inst)
+        a = inst[-1]
+        if p == a:
+            if p == '1':
+                result[TP] += 1
+            else :
+                result[TN] += 1
+        else:
+            if p == 1:
+                result[FP] += 1
+            else:
+                result[FN] += 1
         
-    return con_mat
+    return 
     
 
 def c_matrix(tp, tn, fp, fn):  
@@ -173,6 +184,7 @@ def k_cross(header, table, k):
     random.shuffle(table)
     i = 0
     folds = [[] for x in range(k)]
+    results = {TP:0, TN:0, FP:0, FN:)}
 
     stratified = [a for b in [[x for x in table if x[-1] == y] for y in range(1, 5)] for a in b]
     j = 0
@@ -185,9 +197,8 @@ def k_cross(header, table, k):
     for i in folds:
         test = i
         train = [x for y in folds for x in y if y != test]
-        temp_mat = test_tree(header, train, test)
-        con_mat = utils.add_tables(con_mat, temp_mat)
-
+        test_tree(header, train, test, results)
+        print(results)
     raw_c_mat(con_mat)
     get_mat_accuracy(con_mat)
 
