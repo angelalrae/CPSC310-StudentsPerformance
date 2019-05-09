@@ -1,7 +1,17 @@
+##########################################################################
+# Angela Rae and Alli Fellger
+# Class: CPSC 310.01
+# Filename: exploratory.py
+##########################################################################
+
 import matplotlib.pyplot as plt
 import numpy as np
 
 def students(fname):
+    '''
+        read the students table and strip " marks
+        return tuple of header, table
+    '''
     f = open(fname, 'r')
     lines = [[y.strip('"') for y in x.strip('\n').strip(' ').split(',')] for x in f]
     
@@ -9,6 +19,9 @@ def students(fname):
     return header, lines[1:]
 
 def getcol(data, col):
+    '''
+        return a list of the data from the given columns.
+    '''
     return [x[col] for x in data]
 
 
