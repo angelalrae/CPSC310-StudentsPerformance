@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 def students(fname):
     f = open(fname, 'r')
     lines = [[y.strip('"') for y in x.strip('\n').strip(' ').split(',')] for x in f]
@@ -30,7 +29,6 @@ def make_dot_chart(table, s_att, s_ops, s_labels, chart_title):
     w2 = [int(x[-1].strip('"')) for x in table if x[s_att] == s_ops[1]]
 
     gps = [m1, m2, r1, r2, w1, w2]
-
     y_vals = [[y + 1 for i in range(len(group))] for y, group in enumerate(gps)]
 
     plt.figure()
@@ -51,14 +49,14 @@ def make_dot_chart(table, s_att, s_ops, s_labels, chart_title):
     
     plt.grid(True)
     plt.tight_layout()
-    # plt.savefig(fname)
-    plt.show()
-    # plt.close()
+    plt.savefig(fname)
+    plt.close()
 
 def main():
     f = 'StudentsPerformance.csv'
     h, s = students(f)
-    print("Here")
     make_dot_chart(s, 0, ['female', 'male'], ["Female", "Male"], "Gender")
     make_dot_chart(s, 3, ['standard', 'free/reduced'], ["Standard", "Free/Reduced"], "Lunch Status")
     make_dot_chart(s, 4, ['completed', 'none'], ["Prep Course", "No Prep Course"], "Preparation Course Completion")
+
+main()

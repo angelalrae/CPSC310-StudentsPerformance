@@ -218,3 +218,14 @@ def compute_equal_widths_cutoffs(values, num_bins):
     cutoffs = [round(cutoff, 1) for cutoff in cutoffs]
     
     return cutoffs
+
+def students(fname):
+    f = open(fname, 'r')
+    lines = [[y.strip('"') for y in x.strip('\n').strip(' ').split(',')] for x in f]
+    
+    header = lines[0]
+    return header, lines[1:]
+
+def getcol(data, col):
+    return [x[col] for x in data]
+
