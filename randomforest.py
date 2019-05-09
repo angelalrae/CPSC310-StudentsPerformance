@@ -27,8 +27,10 @@ class Forest(object):
         # dictionary in the forest list
         new_tree = {}
         new_tree["tree"] = tree
-        new_tree["con_mat"] = confusion_matrix
-        new_tree["accuracy"] = get_mat_accuracy(confusion_matrix)
+        new_tree["con_mat"] = confusion_matrix 
+        # confusion matrix not currently used, but could be used
+        #   to implement track record voting instead of simple majority
+        new_tree["accuracy"] = get_current_accuracy(confusion_matrix)
         self.forest_list.append(new_tree)
 
     def min_accuracy(self):
@@ -54,6 +56,18 @@ class Forest(object):
         self.forest_list.pop(self.min_index)
         self.add_tree(new_tree, confusion_matrix)
         self.min_accuracy()
+
+    def classify(self, instance):
+        '''
+        classifies an instance with each tree, then uses simple majority voting
+        to determine class to return
+        '''
+        predictions = []
+        for tree in self.forest_list:
+            predictions.append([tree["tree"].classify(instance)])
+
+        return utils.majority_vote(predictions)
+
 
 class TreeNode(object):
     def __init__(self, table, header, first=True, full_table=None):
@@ -183,7 +197,6 @@ def compute_bootstrap_sample(table):
     given a datatable, computes a bootstrap sample
     returns the sample (to be used as training set) 
       and the remainder (to be used as validation or test set)
-    ** should probably be put in utils file
     '''
     n = len(table)
     sample = []
@@ -254,7 +267,7 @@ def raw_c_mat(outcome):
             print('%4d' % outcome[i][j], end='')
         print()
 
-def get_mat_accuracy(con_mat):
+def get_current_accuracy(con_mat):
     total = sum([sum(x) for x in con_mat])
 
     tp = 0
@@ -269,8 +282,24 @@ def get_mat_accuracy(con_mat):
         fp += newfp
         fn += newfn
     
-    # print_c_matrix(tp, tn, fp, fn)
     return acc(tp, tn, fp, fn)
+
+def print_mat_accuracy(con_mat):
+    total = sum([sum(x) for x in con_mat])
+
+    tp = 0
+    tn = 0
+    fp = 0
+    fn = 0
+
+    for i in range(len(con_mat)):
+        newtp, newtn, newfp, newfn = one_mpg_acc(i, con_mat, total)
+        tp += newtp
+        tn += newtn
+        fp += newfp
+        fn += newfn
+    
+    print_c_matrix(tp, tn, fp, fn)
 
 def one_mpg_acc(i, con_mat, total):
     tp = con_mat[i][i]
@@ -342,8 +371,8 @@ def main():
     test_set, remainder = compute_stratified(students, header, 3)
     
     # use bootstrap sample to train decision trees
-    n = 6 # number of decision trees to generate
-    m = 3 # number of best trees to save
+    n = 10 # number of decision trees to generate
+    m = 5 # number of best trees to save
     
     mForest = Forest(m)
 
@@ -356,12 +385,21 @@ def main():
 
         # once m trees, check accuracy of new tree before adding it to forest
         if (i+1) > m:
-            current_accuracy = get_mat_accuracy(temp_matrix)
-            print(current_accuracy, mForest.min_accuracy())
+            current_accuracy = get_current_accuracy(temp_matrix)
             if current_accuracy > mForest.min_accuracy():
                 mForest.replace(tree, temp_matrix)
         else:
             mForest.add_tree(tree, temp_matrix)
+
+    # test unseen instances using forest
+    confusion_matrix = [[0 for x in range(4)] for y in range(4)]        
+    for instance in test_set:
+        predicted = mForest.classify(instance) - 1
+        actual = instance[-1] - 1 #subtract 1 to match value to index
+
+        if predicted != -1:
+            confusion_matrix[actual][predicted] += 1
+    print_mat_accuracy(confusion_matrix)
 
 if __name__ == "__main__":
     main()
