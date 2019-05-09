@@ -50,10 +50,9 @@ def feed_forward(neural_network, input_vector):
     '''
     outputs = []
     # process one layer at a time
-    for layer in neural_network:                            # add bias input
-        input_with_bias = input_vector + [1]                # compute the output
-        output = [neuron_output(neuron, input_with_bias)    # for each neuron
-            for neuron in layer]                            # and remember it
+    for layer in neural_network: 
+        input_with_bias = input_vector + [1]    
+        output = [neuron_output(neuron, input_with_bias) for neuron in layer]                           
         outputs.append(output)
         input_vector = output
     
@@ -69,13 +68,9 @@ for x in [0, 1]:
         # feed_forward[-1] is the outputs of the output-layer neurons
         print(x, y, feed_forward(xor_network, [x, y]))
 
-
-
-
 # -------------------------------------------------------------
 # 3: Backpropagation
 # -------------------------------------------------------------
-
 # a. run feed-_forward on an input vector to produce the outputs
 #       of all the neurons in the network
 # b. this results in an error for each output neuron - the difference
@@ -137,11 +132,3 @@ output_layer = [[random.random() for _ in range(num_hidden + 1)]
 
 # the network starts out with random weights
 network = [hidden_layer, output_layer]
-
-
-def predict(network, )
-    # and we can train it using the backpropagation algorithm
-    # 10,000 iterations will (hopefully) converge:
-    for _ in range(10000):
-        for input_vector, target_vector in zip(inputs, targets):
-            backpropagate(network, input_vector, target_vector)

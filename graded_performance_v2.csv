@@ -1,0 +1,1001 @@
+gender,parental_level_of_education,lunch,test_preparation_course,math_score,reading_score,writing_score,pass_math,pass_reading,pass_writing
+female,bachelor's degree,standard,none,C,C,C,1,1,1
+female,some college,standard,completed,D,A,B,1,1,1
+female,master's degree,standard,none,A,A,A,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,some college,standard,none,C,C,C,1,1,1
+female,associate's degree,standard,none,C,B,C,1,1,1
+female,some college,standard,completed,B,A,A,1,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+male,high school,free/reduced,completed,D,D,D,1,1,1
+female,high school,free/reduced,none,F,D,F,0,1,0
+male,associate's degree,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,high school,standard,none,D,B,C,1,1,1
+male,some college,standard,completed,C,C,C,1,1,1
+female,master's degree,standard,none,F,F,F,0,0,0
+female,some high school,standard,none,D,C,C,1,1,1
+male,high school,standard,none,B,B,B,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,master's degree,free/reduced,completed,F,F,F,0,0,0
+female,associate's degree,free/reduced,none,F,F,D,0,0,1
+male,high school,standard,none,D,D,D,1,1,1
+female,some college,free/reduced,completed,D,C,C,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+female,some high school,standard,none,D,C,C,1,1,1
+male,bachelor's degree,free/reduced,completed,C,C,B,1,1,1
+male,master's degree,free/reduced,none,C,C,C,1,1,1
+male,some college,standard,none,D,F,F,1,0,0
+female,bachelor's degree,standard,none,D,D,C,1,1,1
+male,high school,standard,none,C,C,D,1,1,1
+female,master's degree,standard,none,D,C,C,1,1,1
+female,some college,standard,none,D,C,C,1,1,1
+female,some college,standard,none,D,D,D,1,1,1
+female,master's degree,free/reduced,none,F,C,D,0,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,some college,standard,none,A,B,B,1,1,1
+male,associate's degree,standard,completed,B,B,C,1,1,1
+female,associate's degree,standard,none,C,B,B,1,1,1
+female,some high school,free/reduced,none,F,D,F,0,1,0
+female,associate's degree,free/reduced,completed,C,A,B,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,F,D,F,0,1,0
+female,associate's degree,standard,none,F,C,D,0,1,1
+female,associate's degree,standard,none,F,F,D,0,0,1
+male,some college,free/reduced,completed,F,D,D,0,1,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,standard,none,D,F,F,1,0,0
+female,associate's degree,standard,completed,F,D,D,0,1,1
+female,high school,standard,none,D,C,C,1,1,1
+female,associate's degree,free/reduced,completed,F,C,C,0,1,1
+male,high school,standard,completed,B,B,B,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,associate's degree,free/reduced,completed,C,D,D,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,high school,standard,none,B,C,C,1,1,1
+female,some high school,free/reduced,completed,C,B,B,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,completed,B,B,B,1,1,1
+male,associate's degree,standard,none,F,F,F,0,0,0
+male,some college,standard,completed,F,F,F,0,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,bachelor's degree,free/reduced,completed,C,C,C,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,D,D,F,1,1,0
+female,associate's degree,standard,none,D,B,C,1,1,1
+female,some high school,standard,none,F,F,F,0,0,0
+male,some high school,standard,none,D,D,D,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,C,C,1,1,1
+male,associate's degree,free/reduced,none,D,F,F,1,0,0
+female,associate's degree,standard,none,F,D,F,0,1,0
+female,some college,free/reduced,completed,F,D,C,0,1,1
+male,some college,standard,completed,D,F,D,1,0,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,some high school,free/reduced,none,D,F,F,1,0,0
+male,some high school,standard,none,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,F,F,F,0,0,0
+male,bachelor's degree,standard,completed,B,C,B,1,1,1
+female,some high school,standard,completed,D,C,C,1,1,1
+female,master's degree,standard,none,D,D,D,1,1,1
+female,associate's degree,standard,none,F,F,F,0,0,0
+male,high school,free/reduced,none,F,F,F,0,0,0
+male,some college,free/reduced,completed,F,F,F,0,0,0
+male,associate's degree,standard,none,C,D,D,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,C,B,B,1,1,1
+female,some college,free/reduced,none,C,B,B,1,1,1
+female,associate's degree,standard,none,C,C,C,1,1,1
+female,some college,standard,none,F,C,D,0,1,1
+female,some high school,standard,none,C,B,B,1,1,1
+female,bachelor's degree,standard,none,D,C,C,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,C,C,C,1,1,1
+male,associate's degree,free/reduced,completed,F,F,F,0,0,0
+female,some college,standard,none,C,B,A,1,1,1
+male,associate's degree,free/reduced,completed,C,B,B,1,1,1
+male,some high school,standard,completed,D,D,D,1,1,1
+female,some college,standard,completed,D,C,C,1,1,1
+female,some college,free/reduced,none,F,D,D,0,1,1
+female,bachelor's degree,standard,none,D,D,D,1,1,1
+male,some college,standard,none,C,D,D,1,1,1
+male,bachelor's degree,standard,completed,D,C,C,1,1,1
+female,associate's degree,standard,none,B,A,B,1,1,1
+male,high school,standard,completed,D,F,F,1,0,0
+male,some college,standard,completed,A,B,A,1,1,1
+female,some college,standard,none,F,D,C,0,1,1
+female,master's degree,standard,none,B,A,A,1,1,1
+male,associate's degree,standard,completed,D,D,D,1,1,1
+female,associate's degree,free/reduced,none,F,C,C,0,1,1
+female,some high school,standard,none,C,D,C,1,1,1
+female,associate's degree,free/reduced,completed,C,B,A,1,1,1
+male,high school,standard,none,D,F,F,1,0,0
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,some college,standard,none,F,F,F,0,0,0
+female,bachelor's degree,standard,completed,A,A,A,1,1,1
+male,high school,standard,none,B,C,C,1,1,1
+female,bachelor's degree,free/reduced,none,C,B,B,1,1,1
+female,bachelor's degree,standard,none,C,B,C,1,1,1
+female,some high school,standard,none,F,D,D,0,1,1
+female,some college,standard,none,F,D,D,0,1,1
+female,bachelor's degree,standard,completed,C,A,B,1,1,1
+male,associate's degree,standard,completed,A,B,A,1,1,1
+female,some college,standard,completed,B,A,A,1,1,1
+male,high school,free/reduced,none,D,F,F,1,0,0
+male,some college,standard,none,B,B,C,1,1,1
+female,high school,standard,none,B,A,B,1,1,1
+male,some high school,standard,none,C,D,D,1,1,1
+male,some college,standard,completed,D,C,C,1,1,1
+male,master's degree,standard,none,B,B,C,1,1,1
+female,bachelor's degree,standard,none,F,F,F,0,0,0
+male,master's degree,standard,none,B,B,B,1,1,1
+male,some high school,free/reduced,completed,F,F,F,0,0,0
+male,some college,free/reduced,completed,B,C,C,1,1,1
+female,some college,standard,completed,C,B,B,1,1,1
+male,bachelor's degree,free/reduced,completed,C,C,C,1,1,1
+male,bachelor's degree,standard,none,F,F,F,0,0,0
+male,some high school,standard,completed,F,F,F,0,0,0
+male,high school,standard,none,C,F,F,1,0,0
+female,associate's degree,standard,none,F,D,D,0,1,1
+male,some college,standard,completed,C,D,D,1,1,1
+female,some high school,standard,none,C,C,C,1,1,1
+female,some college,free/reduced,none,F,D,D,0,1,1
+female,some college,free/reduced,completed,F,F,F,0,0,0
+male,high school,standard,none,F,F,F,0,0,0
+male,some college,standard,none,B,C,C,1,1,1
+female,some college,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,B,B,C,1,1,1
+male,associate's degree,free/reduced,none,C,D,D,1,1,1
+female,bachelor's degree,standard,completed,D,C,B,1,1,1
+male,associate's degree,free/reduced,completed,A,A,A,1,1,1
+male,some high school,standard,completed,D,D,D,1,1,1
+male,bachelor's degree,standard,none,C,D,D,1,1,1
+female,associate's degree,standard,completed,F,C,D,0,1,1
+male,bachelor's degree,standard,none,F,F,F,0,0,0
+male,some high school,standard,none,D,D,D,1,1,1
+female,some college,standard,completed,C,B,B,1,1,1
+female,high school,free/reduced,completed,D,C,C,1,1,1
+male,some college,free/reduced,none,D,D,D,1,1,1
+female,associate's degree,standard,completed,D,B,B,1,1,1
+male,associate's degree,free/reduced,none,D,D,D,1,1,1
+male,associate's degree,free/reduced,completed,B,C,C,1,1,1
+female,some college,free/reduced,completed,C,B,B,1,1,1
+male,master's degree,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,F,F,F,0,0,0
+female,master's degree,standard,none,B,A,A,1,1,1
+female,bachelor's degree,standard,completed,A,A,A,1,1,1
+male,high school,free/reduced,completed,F,F,F,0,0,0
+female,master's degree,free/reduced,completed,F,C,C,0,1,1
+female,high school,standard,completed,D,B,C,1,1,1
+female,some college,free/reduced,completed,D,C,C,1,1,1
+male,high school,standard,completed,C,C,C,1,1,1
+male,some high school,standard,none,A,B,C,1,1,1
+female,some college,standard,none,C,B,B,1,1,1
+female,associate's degree,standard,none,D,D,C,1,1,1
+female,bachelor's degree,free/reduced,completed,F,F,F,0,0,0
+female,master's degree,standard,completed,B,A,B,1,1,1
+female,high school,free/reduced,completed,F,F,F,0,0,0
+female,associate's degree,standard,completed,C,C,C,1,1,1
+female,master's degree,free/reduced,completed,F,C,D,0,1,1
+female,some high school,standard,completed,A,A,A,1,1,1
+male,master's degree,free/reduced,completed,D,D,C,1,1,1
+female,some college,free/reduced,none,F,D,D,0,1,1
+female,high school,standard,none,F,F,F,0,0,0
+female,associate's degree,standard,none,D,D,C,1,1,1
+male,some high school,free/reduced,completed,F,F,F,0,0,0
+male,associate's degree,free/reduced,completed,D,D,D,1,1,1
+male,high school,standard,none,B,C,D,1,1,1
+male,some high school,standard,completed,D,D,D,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,standard,none,C,B,B,1,1,1
+female,associate's degree,standard,none,D,D,D,1,1,1
+male,some college,standard,completed,C,B,C,1,1,1
+female,some high school,standard,none,D,D,D,1,1,1
+male,some college,standard,completed,C,D,D,1,1,1
+female,master's degree,standard,completed,D,B,B,1,1,1
+male,associate's degree,standard,none,D,F,F,1,0,0
+male,some high school,free/reduced,completed,F,D,D,0,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,some college,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,free/reduced,none,C,C,C,1,1,1
+female,associate's degree,standard,completed,D,B,B,1,1,1
+female,some college,free/reduced,none,D,B,C,1,1,1
+male,associate's degree,standard,none,D,C,D,1,1,1
+female,associate's degree,standard,none,F,D,D,0,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,some high school,standard,completed,C,C,C,1,1,1
+male,bachelor's degree,standard,none,B,D,D,1,1,1
+male,high school,standard,completed,B,B,C,1,1,1
+female,some college,free/reduced,none,C,B,C,1,1,1
+female,some college,free/reduced,none,F,D,D,0,1,1
+male,some high school,free/reduced,completed,B,C,C,1,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+female,high school,free/reduced,none,F,D,D,0,1,1
+male,associate's degree,free/reduced,completed,D,F,F,1,0,0
+male,high school,standard,completed,B,A,B,1,1,1
+male,some high school,standard,completed,B,B,C,1,1,1
+female,associate's degree,free/reduced,completed,B,B,B,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,high school,free/reduced,none,D,C,C,1,1,1
+male,some high school,standard,completed,D,F,F,1,0,0
+female,high school,standard,completed,F,D,C,0,1,1
+male,associate's degree,standard,none,B,B,C,1,1,1
+female,some high school,free/reduced,none,F,D,D,0,1,1
+male,some high school,standard,none,B,B,C,1,1,1
+female,associate's degree,standard,completed,F,D,C,0,1,1
+female,master's degree,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,C,C,C,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+male,some high school,free/reduced,none,D,C,D,1,1,1
+female,some college,standard,completed,B,A,A,1,1,1
+male,some college,standard,none,C,D,D,1,1,1
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,bachelor's degree,standard,none,D,B,B,1,1,1
+male,some high school,standard,none,A,B,C,1,1,1
+male,bachelor's degree,standard,completed,B,B,B,1,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+male,bachelor's degree,free/reduced,none,D,D,D,1,1,1
+female,some high school,standard,completed,D,D,C,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,none,B,B,B,1,1,1
+male,high school,free/reduced,completed,C,D,D,1,1,1
+female,bachelor's degree,standard,none,B,B,B,1,1,1
+female,high school,standard,none,F,F,F,0,0,0
+male,some college,standard,none,F,F,F,0,0,0
+male,some high school,standard,none,C,C,D,1,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+female,high school,standard,completed,F,C,D,0,1,1
+female,high school,standard,none,D,D,D,1,1,1
+male,high school,standard,none,D,D,F,1,1,0
+male,some high school,standard,completed,F,F,F,0,0,0
+female,some college,free/reduced,none,C,B,B,1,1,1
+female,some high school,standard,completed,D,C,C,1,1,1
+male,master's degree,standard,none,B,B,C,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+female,some college,standard,none,D,C,C,1,1,1
+female,associate's degree,free/reduced,none,D,C,D,1,1,1
+male,associate's degree,standard,completed,C,C,C,1,1,1
+female,some college,standard,none,C,C,C,1,1,1
+female,master's degree,free/reduced,completed,D,B,B,1,1,1
+female,some high school,free/reduced,completed,D,C,C,1,1,1
+male,some college,standard,completed,C,C,C,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,high school,standard,none,A,A,A,1,1,1
+male,high school,standard,none,C,C,D,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,standard,none,D,C,B,1,1,1
+female,high school,standard,none,D,C,C,1,1,1
+female,associate's degree,standard,completed,B,A,A,1,1,1
+female,some college,free/reduced,none,C,C,C,1,1,1
+male,bachelor's degree,standard,none,D,D,D,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,C,C,1,1,1
+male,some college,standard,completed,B,B,C,1,1,1
+male,bachelor's degree,standard,none,B,C,C,1,1,1
+female,some high school,standard,completed,B,A,A,1,1,1
+female,high school,standard,completed,F,D,C,0,1,1
+female,some high school,free/reduced,none,D,B,B,1,1,1
+male,bachelor's degree,free/reduced,none,C,F,F,1,0,0
+male,high school,standard,none,F,F,F,0,0,0
+male,high school,standard,none,F,F,F,0,0,0
+female,bachelor's degree,free/reduced,none,C,C,B,1,1,1
+female,some college,free/reduced,completed,C,C,C,1,1,1
+female,some high school,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,completed,B,B,B,1,1,1
+male,associate's degree,standard,completed,A,B,B,1,1,1
+female,some high school,standard,none,D,B,B,1,1,1
+male,bachelor's degree,free/reduced,none,B,C,C,1,1,1
+male,some high school,standard,completed,C,C,C,1,1,1
+male,associate's degree,standard,none,C,C,D,1,1,1
+male,some high school,standard,none,B,C,C,1,1,1
+male,some high school,standard,completed,D,D,F,1,1,0
+female,bachelor's degree,standard,none,D,C,C,1,1,1
+male,high school,free/reduced,completed,C,C,B,1,1,1
+male,associate's degree,free/reduced,none,D,D,D,1,1,1
+male,some high school,standard,completed,F,F,F,0,0,0
+male,associate's degree,standard,completed,C,C,D,1,1,1
+male,high school,free/reduced,completed,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,A,B,C,1,1,1
+male,some college,free/reduced,completed,B,C,B,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,completed,D,B,B,1,1,1
+male,associate's degree,standard,none,B,C,D,1,1,1
+female,associate's degree,standard,completed,C,C,B,1,1,1
+male,some college,standard,none,D,D,D,1,1,1
+male,some college,standard,completed,A,B,B,1,1,1
+male,some high school,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,none,F,C,D,0,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,none,C,C,B,1,1,1
+male,bachelor's degree,standard,none,D,D,F,1,1,0
+male,bachelor's degree,standard,completed,D,D,D,1,1,1
+female,associate's degree,free/reduced,completed,D,D,D,1,1,1
+female,bachelor's degree,standard,completed,F,D,C,0,1,1
+male,high school,standard,none,C,D,D,1,1,1
+female,master's degree,standard,completed,C,B,A,1,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+male,bachelor's degree,standard,none,D,C,D,1,1,1
+female,associate's degree,free/reduced,none,F,D,D,0,1,1
+female,high school,free/reduced,completed,D,C,B,1,1,1
+female,high school,standard,none,C,B,C,1,1,1
+female,some college,standard,none,C,B,B,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,B,A,A,1,1,1
+male,some college,standard,none,D,D,D,1,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,standard,completed,B,C,C,1,1,1
+female,some high school,standard,none,F,F,F,0,0,0
+male,high school,standard,none,C,D,D,1,1,1
+male,associate's degree,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,completed,D,F,F,1,0,0
+male,associate's degree,standard,none,A,C,B,1,1,1
+female,bachelor's degree,standard,none,B,A,A,1,1,1
+female,some college,free/reduced,none,D,D,D,1,1,1
+male,some high school,standard,completed,C,C,D,1,1,1
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,some high school,free/reduced,completed,F,F,D,0,0,1
+male,high school,free/reduced,none,F,D,F,0,1,0
+female,high school,standard,none,D,C,D,1,1,1
+female,high school,standard,completed,D,C,C,1,1,1
+male,associate's degree,standard,completed,D,C,D,1,1,1
+male,some college,standard,none,C,C,D,1,1,1
+female,high school,standard,none,C,B,C,1,1,1
+male,some college,standard,none,D,D,F,1,1,0
+female,bachelor's degree,standard,completed,C,A,A,1,1,1
+male,high school,free/reduced,none,C,C,D,1,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+female,bachelor's degree,standard,none,F,D,D,0,1,1
+male,some college,standard,none,D,F,F,1,0,0
+female,some college,standard,completed,D,C,B,1,1,1
+female,associate's degree,standard,none,F,F,F,0,0,0
+female,some college,standard,none,F,C,C,0,1,1
+female,bachelor's degree,standard,none,D,C,C,1,1,1
+male,associate's degree,standard,none,D,D,D,1,1,1
+female,some college,free/reduced,completed,F,D,D,0,1,1
+male,some college,free/reduced,none,F,D,D,0,1,1
+female,some college,standard,none,B,A,B,1,1,1
+female,high school,standard,none,F,D,F,0,1,0
+male,some high school,standard,completed,B,B,C,1,1,1
+female,some college,standard,none,F,F,F,0,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,some college,standard,none,F,D,F,0,1,0
+male,bachelor's degree,free/reduced,completed,F,F,D,0,0,1
+male,high school,standard,completed,D,F,F,1,0,0
+male,bachelor's degree,free/reduced,none,D,D,D,1,1,1
+female,some high school,free/reduced,none,F,D,F,0,1,0
+female,some high school,standard,none,C,B,B,1,1,1
+male,some college,standard,none,B,C,C,1,1,1
+female,some college,free/reduced,completed,F,C,C,0,1,1
+male,some high school,standard,none,C,C,C,1,1,1
+female,some college,standard,completed,B,A,A,1,1,1
+female,bachelor's degree,standard,none,F,C,C,0,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,some high school,standard,none,B,A,B,1,1,1
+female,master's degree,free/reduced,completed,B,A,A,1,1,1
+female,some high school,standard,none,C,B,C,1,1,1
+male,bachelor's degree,standard,none,D,D,D,1,1,1
+female,associate's degree,standard,none,B,B,B,1,1,1
+male,associate's degree,standard,completed,B,A,A,1,1,1
+male,master's degree,free/reduced,none,C,B,C,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,C,C,1,1,1
+female,bachelor's degree,standard,none,D,C,C,1,1,1
+female,associate's degree,free/reduced,none,F,C,D,0,1,1
+female,high school,standard,none,D,D,D,1,1,1
+male,master's degree,standard,none,C,C,C,1,1,1
+male,some high school,free/reduced,completed,C,D,F,1,1,0
+female,some college,standard,none,C,D,C,1,1,1
+male,some college,standard,none,C,D,D,1,1,1
+male,associate's degree,standard,completed,F,F,F,0,0,0
+female,some high school,standard,completed,D,C,C,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,high school,free/reduced,none,F,D,D,0,1,1
+female,associate's degree,standard,none,B,B,A,1,1,1
+male,some high school,standard,none,C,D,F,1,1,0
+male,some high school,standard,none,D,F,F,1,0,0
+female,some high school,standard,completed,F,F,D,0,0,1
+male,some college,standard,none,F,F,F,0,0,0
+female,some college,free/reduced,none,F,D,F,0,1,0
+female,high school,standard,completed,B,A,A,1,1,1
+female,high school,standard,none,F,F,D,0,0,1
+female,some high school,standard,none,D,C,D,1,1,1
+male,associate's degree,standard,completed,D,D,D,1,1,1
+female,associate's degree,standard,none,B,B,C,1,1,1
+female,high school,free/reduced,completed,F,F,F,0,0,0
+male,associate's degree,standard,completed,B,B,B,1,1,1
+female,master's degree,standard,completed,C,C,C,1,1,1
+male,some college,standard,completed,B,B,C,1,1,1
+male,associate's degree,standard,none,C,D,D,1,1,1
+male,some high school,standard,completed,D,D,D,1,1,1
+female,bachelor's degree,free/reduced,completed,F,C,C,0,1,1
+male,high school,standard,none,B,C,D,1,1,1
+male,bachelor's degree,standard,completed,C,C,D,1,1,1
+male,associate's degree,standard,none,C,C,D,1,1,1
+male,some college,standard,none,D,F,D,1,0,1
+male,high school,free/reduced,completed,F,F,F,0,0,0
+female,associate's degree,free/reduced,completed,B,A,A,1,1,1
+female,high school,standard,completed,F,F,D,0,0,1
+female,master's degree,free/reduced,completed,F,F,D,0,0,1
+female,some high school,standard,completed,F,B,B,0,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+female,some college,free/reduced,none,D,D,D,1,1,1
+male,bachelor's degree,standard,none,B,B,B,1,1,1
+male,some high school,free/reduced,none,D,C,D,1,1,1
+male,some high school,free/reduced,none,D,F,F,1,0,0
+male,some high school,free/reduced,none,D,D,F,1,1,0
+male,associate's degree,free/reduced,none,D,D,F,1,1,0
+female,high school,standard,none,D,C,C,1,1,1
+male,high school,standard,none,D,F,F,1,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,C,D,D,1,1,1
+male,some college,free/reduced,completed,F,F,F,0,0,0
+male,associate's degree,standard,none,C,D,D,1,1,1
+male,associate's degree,free/reduced,none,C,D,C,1,1,1
+male,high school,standard,none,C,F,F,1,0,0
+male,some high school,standard,completed,B,B,B,1,1,1
+female,some college,standard,completed,D,B,C,1,1,1
+female,high school,standard,none,C,B,B,1,1,1
+female,some high school,free/reduced,none,F,C,D,0,1,1
+female,associate's degree,standard,none,C,B,C,1,1,1
+male,some high school,free/reduced,none,C,B,C,1,1,1
+female,some high school,standard,completed,D,C,C,1,1,1
+male,some college,free/reduced,none,D,D,D,1,1,1
+male,high school,standard,completed,B,B,B,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,none,B,C,C,1,1,1
+female,some college,free/reduced,completed,D,B,B,1,1,1
+female,some college,standard,none,A,A,A,1,1,1
+female,associate's degree,free/reduced,none,D,C,C,1,1,1
+male,some college,free/reduced,none,D,F,F,1,0,0
+female,associate's degree,free/reduced,none,F,D,D,0,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,standard,none,C,B,B,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,standard,none,A,A,A,1,1,1
+male,high school,standard,completed,C,D,D,1,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+male,some college,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,C,C,C,1,1,1
+female,some college,free/reduced,none,C,A,A,1,1,1
+male,bachelor's degree,standard,completed,C,F,D,1,0,1
+female,some college,standard,none,B,B,A,1,1,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,high school,free/reduced,completed,C,D,D,1,1,1
+female,high school,free/reduced,completed,C,B,B,1,1,1
+male,some college,standard,none,A,C,C,1,1,1
+female,associate's degree,standard,completed,B,B,A,1,1,1
+female,high school,standard,none,D,D,C,1,1,1
+female,associate's degree,standard,completed,D,B,B,1,1,1
+female,some high school,standard,none,F,D,D,0,1,1
+female,associate's degree,standard,completed,A,A,A,1,1,1
+female,bachelor's degree,standard,completed,C,C,B,1,1,1
+male,bachelor's degree,standard,completed,C,D,D,1,1,1
+male,associate's degree,standard,none,B,D,C,1,1,1
+female,master's degree,standard,none,F,D,C,0,1,1
+male,associate's degree,standard,none,C,C,D,1,1,1
+male,high school,standard,completed,C,C,D,1,1,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,some college,free/reduced,none,D,D,D,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+female,associate's degree,standard,none,F,F,F,0,0,0
+male,high school,standard,none,C,C,C,1,1,1
+male,some college,free/reduced,none,D,F,F,1,0,0
+female,associate's degree,free/reduced,none,D,C,C,1,1,1
+male,some high school,standard,completed,D,F,F,1,0,0
+male,associate's degree,free/reduced,completed,C,B,B,1,1,1
+female,associate's degree,free/reduced,none,D,B,C,1,1,1
+female,associate's degree,standard,none,D,D,C,1,1,1
+female,some college,standard,none,B,B,A,1,1,1
+female,bachelor's degree,standard,none,B,B,A,1,1,1
+female,high school,standard,none,F,D,D,0,1,1
+male,high school,standard,completed,D,D,D,1,1,1
+female,some college,standard,none,F,F,F,0,0,0
+female,some college,free/reduced,completed,F,C,C,0,1,1
+female,some high school,standard,none,D,D,D,1,1,1
+male,some college,standard,none,C,C,C,1,1,1
+female,master's degree,standard,none,C,C,B,1,1,1
+female,associate's degree,standard,completed,A,B,A,1,1,1
+male,some college,free/reduced,none,D,D,F,1,1,0
+female,associate's degree,standard,completed,A,B,A,1,1,1
+female,master's degree,free/reduced,none,F,F,F,0,0,0
+female,some high school,standard,none,B,B,B,1,1,1
+male,high school,standard,none,D,C,D,1,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+male,master's degree,standard,none,C,C,C,1,1,1
+female,bachelor's degree,standard,none,B,A,B,1,1,1
+male,some college,standard,none,C,C,C,1,1,1
+male,some high school,standard,none,D,F,F,1,0,0
+male,some high school,free/reduced,none,D,F,F,1,0,0
+female,some high school,standard,completed,F,D,D,0,1,1
+female,master's degree,free/reduced,completed,C,A,A,1,1,1
+female,some high school,standard,completed,C,B,B,1,1,1
+female,some college,standard,none,C,B,B,1,1,1
+female,some college,standard,completed,D,C,C,1,1,1
+female,some high school,standard,completed,D,C,C,1,1,1
+female,high school,free/reduced,completed,D,C,C,1,1,1
+male,some college,standard,none,C,F,F,1,0,0
+female,associate's degree,standard,none,A,B,B,1,1,1
+male,bachelor's degree,standard,none,D,F,F,1,0,0
+male,master's degree,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,completed,F,F,F,0,0,0
+male,some college,standard,none,D,D,F,1,1,0
+male,some high school,free/reduced,completed,F,D,D,0,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+female,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,none,D,C,C,1,1,1
+female,associate's degree,standard,completed,D,D,C,1,1,1
+female,some high school,standard,none,F,F,F,0,0,0
+male,associate's degree,standard,completed,D,D,F,1,1,0
+female,associate's degree,standard,completed,C,B,A,1,1,1
+male,high school,standard,completed,C,D,D,1,1,1
+female,bachelor's degree,free/reduced,completed,D,B,B,1,1,1
+male,associate's degree,standard,completed,F,D,F,0,1,0
+female,high school,standard,none,F,D,D,0,1,1
+male,bachelor's degree,standard,completed,B,D,C,1,1,1
+male,associate's degree,standard,completed,A,A,B,1,1,1
+male,high school,standard,completed,C,D,D,1,1,1
+male,associate's degree,free/reduced,completed,C,B,B,1,1,1
+female,associate's degree,standard,none,B,C,C,1,1,1
+female,associate's degree,standard,none,B,A,B,1,1,1
+female,master's degree,standard,none,D,D,D,1,1,1
+male,some high school,free/reduced,completed,C,B,B,1,1,1
+female,some high school,standard,completed,A,A,A,1,1,1
+male,high school,standard,completed,C,D,D,1,1,1
+female,high school,free/reduced,none,D,D,D,1,1,1
+male,master's degree,standard,none,C,C,D,1,1,1
+male,some high school,free/reduced,none,C,C,D,1,1,1
+male,bachelor's degree,free/reduced,completed,B,A,B,1,1,1
+female,associate's degree,standard,none,F,F,F,0,0,0
+male,some college,free/reduced,none,C,D,D,1,1,1
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,some college,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,completed,F,C,C,0,1,1
+male,master's degree,free/reduced,none,D,D,D,1,1,1
+female,associate's degree,free/reduced,none,F,C,C,0,1,1
+male,some high school,standard,none,C,D,D,1,1,1
+female,some college,standard,completed,C,C,C,1,1,1
+female,some college,standard,none,D,C,C,1,1,1
+male,bachelor's degree,standard,completed,A,A,A,1,1,1
+female,some college,free/reduced,completed,D,B,B,1,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,standard,none,F,F,F,0,0,0
+female,bachelor's degree,free/reduced,completed,A,A,A,1,1,1
+female,master's degree,free/reduced,completed,D,C,C,1,1,1
+male,high school,free/reduced,none,D,F,F,1,0,0
+male,bachelor's degree,free/reduced,none,D,D,D,1,1,1
+male,some college,standard,completed,C,C,C,1,1,1
+male,bachelor's degree,standard,none,A,A,A,1,1,1
+female,some college,standard,none,F,D,F,0,1,0
+female,high school,free/reduced,completed,F,D,D,0,1,1
+female,high school,standard,none,C,B,C,1,1,1
+male,associate's degree,free/reduced,completed,F,F,F,0,0,0
+male,some college,standard,completed,D,F,F,1,0,0
+female,high school,standard,none,B,A,B,1,1,1
+female,some college,free/reduced,completed,F,F,F,0,0,0
+female,master's degree,standard,none,F,D,D,0,1,1
+female,some high school,standard,none,B,A,A,1,1,1
+female,some high school,standard,none,C,C,B,1,1,1
+female,bachelor's degree,free/reduced,none,D,C,C,1,1,1
+female,associate's degree,standard,completed,C,C,B,1,1,1
+female,some college,standard,none,D,C,C,1,1,1
+female,associate's degree,standard,none,D,C,C,1,1,1
+female,high school,standard,none,F,C,C,0,1,1
+female,bachelor's degree,free/reduced,none,F,D,D,0,1,1
+female,some college,standard,none,F,D,D,0,1,1
+female,some high school,standard,none,F,D,D,0,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,C,D,F,1,1,0
+male,bachelor's degree,standard,none,D,D,D,1,1,1
+female,high school,standard,none,C,C,C,1,1,1
+female,bachelor's degree,standard,completed,A,A,A,1,1,1
+female,bachelor's degree,standard,completed,F,C,C,0,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,F,F,F,0,0,0
+female,high school,standard,none,D,C,C,1,1,1
+female,some high school,standard,none,D,B,B,1,1,1
+female,master's degree,standard,none,F,D,D,0,1,1
+female,high school,standard,none,F,F,F,0,0,0
+female,some college,standard,none,C,C,B,1,1,1
+male,high school,free/reduced,none,D,F,F,1,0,0
+male,master's degree,free/reduced,completed,B,B,A,1,1,1
+male,some high school,standard,none,C,C,D,1,1,1
+female,associate's degree,standard,none,B,B,B,1,1,1
+female,master's degree,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,D,D,1,1,1
+female,associate's degree,standard,none,F,D,D,0,1,1
+male,some college,free/reduced,completed,D,D,D,1,1,1
+female,some college,standard,none,F,F,D,0,0,1
+male,bachelor's degree,standard,completed,A,A,A,1,1,1
+female,associate's degree,standard,none,D,C,C,1,1,1
+female,associate's degree,standard,none,B,A,A,1,1,1
+female,high school,standard,none,D,D,C,1,1,1
+female,bachelor's degree,standard,none,F,F,F,0,0,0
+male,bachelor's degree,standard,none,B,C,B,1,1,1
+male,master's degree,standard,none,A,B,B,1,1,1
+male,associate's degree,free/reduced,completed,D,C,D,1,1,1
+female,high school,free/reduced,none,F,D,F,0,1,0
+male,bachelor's degree,free/reduced,none,D,D,F,1,1,0
+male,high school,free/reduced,completed,F,F,F,0,0,0
+male,some college,standard,completed,A,A,B,1,1,1
+female,bachelor's degree,free/reduced,none,D,F,D,1,0,1
+male,some college,standard,completed,A,A,A,1,1,1
+male,associate's degree,free/reduced,completed,D,C,D,1,1,1
+male,associate's degree,standard,none,D,F,F,1,0,0
+male,some college,free/reduced,none,F,F,F,0,0,0
+female,some high school,standard,completed,F,F,F,0,0,0
+male,some college,standard,none,D,D,C,1,1,1
+male,high school,standard,none,C,D,D,1,1,1
+female,bachelor's degree,standard,completed,D,C,B,1,1,1
+female,high school,standard,none,C,B,B,1,1,1
+male,some high school,standard,none,B,B,B,1,1,1
+male,high school,standard,none,C,C,D,1,1,1
+female,high school,free/reduced,completed,D,B,B,1,1,1
+female,some high school,standard,completed,B,A,B,1,1,1
+male,some college,standard,none,B,C,C,1,1,1
+female,associate's degree,standard,none,C,C,C,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,completed,C,B,A,1,1,1
+female,some high school,free/reduced,none,C,B,C,1,1,1
+female,high school,standard,completed,C,C,B,1,1,1
+male,high school,standard,none,C,D,D,1,1,1
+female,bachelor's degree,standard,completed,D,B,B,1,1,1
+female,associate's degree,standard,none,F,C,D,0,1,1
+female,high school,free/reduced,none,D,D,D,1,1,1
+female,high school,standard,none,F,F,F,0,0,0
+female,some college,standard,completed,D,C,B,1,1,1
+male,some high school,free/reduced,completed,F,F,F,0,0,0
+female,high school,standard,completed,D,B,C,1,1,1
+female,some college,standard,completed,B,B,A,1,1,1
+female,associate's degree,standard,completed,D,C,C,1,1,1
+female,some high school,standard,none,C,C,C,1,1,1
+female,some college,standard,none,D,D,D,1,1,1
+male,associate's degree,free/reduced,none,C,D,D,1,1,1
+male,some high school,standard,none,D,D,D,1,1,1
+female,associate's degree,free/reduced,none,F,D,F,0,1,0
+male,associate's degree,standard,none,A,B,B,1,1,1
+male,some college,free/reduced,none,C,C,C,1,1,1
+male,some high school,standard,none,C,D,D,1,1,1
+female,some college,free/reduced,none,F,C,D,0,1,1
+female,high school,standard,none,D,D,D,1,1,1
+male,associate's degree,standard,none,B,D,D,1,1,1
+female,some high school,free/reduced,completed,F,D,D,0,1,1
+female,some college,free/reduced,completed,D,C,C,1,1,1
+female,bachelor's degree,free/reduced,none,C,B,B,1,1,1
+male,some college,standard,none,C,C,D,1,1,1
+male,associate's degree,standard,completed,B,C,C,1,1,1
+female,high school,free/reduced,none,D,C,D,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,C,C,1,1,1
+female,associate's degree,standard,completed,D,B,B,1,1,1
+female,high school,standard,completed,D,C,C,1,1,1
+female,some college,standard,completed,F,D,D,0,1,1
+female,some college,standard,completed,C,C,C,1,1,1
+female,some high school,standard,completed,C,B,C,1,1,1
+male,associate's degree,free/reduced,none,B,C,C,1,1,1
+male,some college,free/reduced,none,D,D,D,1,1,1
+female,high school,standard,none,D,C,C,1,1,1
+male,high school,standard,none,D,D,D,1,1,1
+male,high school,standard,none,D,F,F,1,0,0
+female,some high school,free/reduced,completed,F,F,F,0,0,0
+male,some college,standard,completed,D,D,D,1,1,1
+female,master's degree,standard,completed,A,A,A,1,1,1
+male,some college,standard,completed,B,C,D,1,1,1
+male,associate's degree,free/reduced,none,C,C,C,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+male,some college,free/reduced,none,A,A,B,1,1,1
+female,associate's degree,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,none,C,C,C,1,1,1
+female,bachelor's degree,free/reduced,completed,D,C,B,1,1,1
+female,associate's degree,standard,none,C,C,C,1,1,1
+female,some high school,standard,none,F,D,F,0,1,0
+female,some college,free/reduced,none,C,B,B,1,1,1
+female,associate's degree,standard,completed,C,B,A,1,1,1
+female,bachelor's degree,standard,none,F,C,C,0,1,1
+female,associate's degree,standard,completed,F,C,C,0,1,1
+male,high school,free/reduced,none,D,D,F,1,1,0
+female,bachelor's degree,standard,completed,C,B,B,1,1,1
+female,some high school,standard,none,F,D,C,0,1,1
+male,bachelor's degree,standard,completed,B,B,B,1,1,1
+female,some college,standard,none,D,D,D,1,1,1
+female,some high school,free/reduced,completed,F,D,D,0,1,1
+male,bachelor's degree,free/reduced,none,D,C,D,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+male,some college,standard,none,D,F,F,1,0,0
+male,high school,standard,none,B,B,C,1,1,1
+female,associate's degree,free/reduced,completed,F,D,F,0,1,0
+male,some college,standard,completed,A,B,A,1,1,1
+female,some high school,standard,completed,B,B,B,1,1,1
+female,some college,standard,none,A,A,A,1,1,1
+male,master's degree,standard,none,B,B,B,1,1,1
+female,some high school,standard,completed,D,C,C,1,1,1
+female,associate's degree,free/reduced,completed,C,A,B,1,1,1
+male,associate's degree,standard,completed,C,C,C,1,1,1
+female,associate's degree,standard,completed,A,A,A,1,1,1
+female,high school,standard,none,C,C,C,1,1,1
+male,associate's degree,free/reduced,completed,A,C,B,1,1,1
+female,some college,free/reduced,none,D,C,C,1,1,1
+male,some high school,free/reduced,completed,F,F,F,0,0,0
+female,some high school,free/reduced,completed,C,A,B,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+male,some college,standard,none,F,F,F,0,0,0
+male,some college,standard,completed,B,C,C,1,1,1
+female,associate's degree,standard,completed,D,C,C,1,1,1
+male,some high school,standard,completed,D,F,F,1,0,0
+female,high school,free/reduced,none,C,A,B,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,completed,D,C,B,1,1,1
+male,some high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,completed,B,B,A,1,1,1
+male,some high school,standard,none,F,F,F,0,0,0
+female,some college,free/reduced,none,F,F,F,0,0,0
+male,master's degree,standard,none,D,F,F,1,0,0
+male,associate's degree,standard,none,A,C,B,1,1,1
+female,some college,free/reduced,completed,F,D,C,0,1,1
+male,associate's degree,standard,none,B,C,C,1,1,1
+male,high school,free/reduced,none,D,D,F,1,1,0
+male,bachelor's degree,standard,none,B,C,C,1,1,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,high school,standard,none,B,B,B,1,1,1
+female,associate's degree,standard,completed,F,C,C,0,1,1
+male,some college,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,standard,none,C,C,C,1,1,1
+male,high school,standard,none,D,C,C,1,1,1
+male,some college,standard,none,D,D,D,1,1,1
+female,bachelor's degree,free/reduced,none,F,D,F,0,1,0
+male,some college,standard,completed,B,B,B,1,1,1
+male,some high school,standard,completed,C,D,D,1,1,1
+male,some college,standard,none,D,C,D,1,1,1
+male,master's degree,free/reduced,completed,C,C,C,1,1,1
+female,some high school,standard,completed,C,A,B,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,none,B,A,A,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+male,bachelor's degree,free/reduced,completed,C,D,C,1,1,1
+female,some college,free/reduced,completed,F,F,D,0,0,1
+male,some college,standard,completed,D,C,C,1,1,1
+female,high school,free/reduced,none,F,C,D,0,1,1
+female,some high school,standard,none,F,F,F,0,0,0
+male,some high school,standard,completed,C,B,B,1,1,1
+female,high school,standard,none,D,D,D,1,1,1
+male,some college,standard,none,D,D,F,1,1,0
+female,high school,standard,none,C,C,C,1,1,1
+female,high school,standard,completed,F,C,C,0,1,1
+male,high school,standard,completed,C,D,D,1,1,1
+female,some high school,standard,none,D,C,C,1,1,1
+male,some college,free/reduced,none,F,D,F,0,1,0
+male,high school,standard,none,F,F,F,0,0,0
+male,bachelor's degree,standard,none,C,C,C,1,1,1
+female,some high school,free/reduced,completed,F,D,C,0,1,1
+female,bachelor's degree,free/reduced,none,D,C,C,1,1,1
+male,some college,standard,none,D,D,D,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,high school,standard,none,D,C,C,1,1,1
+female,some college,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,completed,C,C,B,1,1,1
+male,associate's degree,standard,completed,A,B,B,1,1,1
+female,associate's degree,free/reduced,none,F,F,F,0,0,0
+female,master's degree,standard,none,C,A,B,1,1,1
+female,high school,free/reduced,completed,C,B,B,1,1,1
+female,associate's degree,standard,completed,F,F,D,0,0,1
+male,bachelor's degree,standard,completed,A,B,C,1,1,1
+female,some high school,standard,completed,F,F,F,0,0,0
+female,some high school,free/reduced,none,C,C,C,1,1,1
+female,some college,standard,none,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,D,D,D,1,1,1
+female,master's degree,free/reduced,none,F,D,D,0,1,1
+female,high school,standard,none,F,D,D,0,1,1
+female,some college,free/reduced,none,D,D,C,1,1,1
+male,high school,free/reduced,none,D,C,D,1,1,1
+male,some high school,standard,completed,B,B,C,1,1,1
+female,high school,standard,none,F,F,F,0,0,0
+female,associate's degree,free/reduced,completed,F,D,C,0,1,1
+male,high school,standard,none,C,C,C,1,1,1
+female,associate's degree,free/reduced,none,C,B,B,1,1,1
+male,some college,standard,none,D,D,F,1,1,0
+female,associate's degree,standard,none,F,F,F,0,0,0
+male,some high school,standard,completed,D,C,D,1,1,1
+male,some high school,standard,completed,C,B,C,1,1,1
+female,associate's degree,standard,none,B,A,A,1,1,1
+female,some college,standard,none,B,B,B,1,1,1
+female,some college,standard,none,C,C,C,1,1,1
+male,some college,free/reduced,none,C,B,C,1,1,1
+female,some college,free/reduced,none,D,C,C,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,A,C,D,1,1,1
+male,bachelor's degree,standard,none,F,F,F,0,0,0
+male,some high school,standard,none,F,F,F,0,0,0
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,master's degree,standard,completed,F,D,D,0,1,1
+male,some high school,standard,completed,B,B,C,1,1,1
+female,high school,standard,none,C,B,B,1,1,1
+male,some high school,standard,completed,A,B,B,1,1,1
+female,bachelor's degree,standard,none,F,F,D,0,0,1
+male,bachelor's degree,free/reduced,completed,D,C,C,1,1,1
+female,high school,free/reduced,none,D,C,D,1,1,1
+female,some high school,standard,none,C,A,B,1,1,1
+female,some high school,standard,completed,B,A,A,1,1,1
+female,bachelor's degree,free/reduced,none,C,A,A,1,1,1
+male,some college,free/reduced,completed,F,F,F,0,0,0
+female,high school,free/reduced,none,C,B,B,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,D,D,F,1,1,0
+female,associate's degree,free/reduced,completed,F,D,C,0,1,1
+female,some high school,standard,none,D,D,C,1,1,1
+female,some high school,free/reduced,completed,D,B,B,1,1,1
+male,some high school,standard,none,D,F,F,1,0,0
+female,some college,free/reduced,none,D,D,F,1,1,0
+female,bachelor's degree,free/reduced,completed,C,B,B,1,1,1
+male,bachelor's degree,standard,none,D,D,F,1,1,0
+female,high school,standard,completed,C,B,B,1,1,1
+male,some college,standard,none,F,F,F,0,0,0
+female,high school,standard,completed,D,D,C,1,1,1
+male,high school,standard,none,C,D,F,1,1,0
+female,high school,standard,completed,C,B,C,1,1,1
+male,associate's degree,free/reduced,completed,F,F,F,0,0,0
+female,associate's degree,standard,none,D,C,C,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,D,F,F,1,0,0
+female,high school,free/reduced,completed,F,F,F,0,0,0
+male,some college,free/reduced,completed,C,C,C,1,1,1
+female,some high school,free/reduced,completed,F,D,D,0,1,1
+male,master's degree,standard,none,A,B,B,1,1,1
+male,master's degree,standard,completed,A,B,B,1,1,1
+male,high school,standard,none,D,F,F,1,0,0
+female,high school,standard,none,F,C,D,0,1,1
+male,associate's degree,standard,none,B,C,D,1,1,1
+male,master's degree,standard,none,C,D,D,1,1,1
+female,high school,standard,none,D,D,D,1,1,1
+female,some college,standard,none,B,B,A,1,1,1
+male,some high school,standard,none,B,D,D,1,1,1
+male,some high school,standard,none,D,D,F,1,1,0
+female,bachelor's degree,standard,none,A,A,A,1,1,1
+male,some college,free/reduced,none,C,D,D,1,1,1
+female,bachelor's degree,standard,none,D,C,B,1,1,1
+male,high school,standard,completed,F,F,F,0,0,0
+male,associate's degree,free/reduced,none,B,C,C,1,1,1
+female,associate's degree,standard,none,F,D,F,0,1,0
+female,master's degree,free/reduced,none,B,B,B,1,1,1
+male,bachelor's degree,free/reduced,completed,F,F,F,0,0,0
+female,some college,standard,completed,C,C,B,1,1,1
+male,associate's degree,standard,none,A,A,A,1,1,1
+male,some college,standard,completed,B,B,B,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+male,associate's degree,standard,none,D,F,F,1,0,0
+male,associate's degree,free/reduced,completed,C,C,C,1,1,1
+male,associate's degree,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,F,F,F,0,0,0
+female,some college,standard,completed,C,C,C,1,1,1
+male,associate's degree,standard,completed,B,B,C,1,1,1
+male,associate's degree,free/reduced,none,A,A,B,1,1,1
+female,bachelor's degree,free/reduced,none,F,D,D,0,1,1
+male,some college,free/reduced,none,B,D,D,1,1,1
+male,some college,standard,none,B,B,B,1,1,1
+male,some high school,standard,none,F,D,F,0,1,0
+female,some high school,standard,none,F,C,B,0,1,1
+female,associate's degree,standard,none,D,C,C,1,1,1
+male,bachelor's degree,standard,completed,D,D,D,1,1,1
+female,bachelor's degree,standard,completed,C,C,C,1,1,1
+female,high school,free/reduced,none,D,C,C,1,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,none,F,F,F,0,0,0
+female,associate's degree,standard,completed,D,C,B,1,1,1
+female,associate's degree,standard,completed,A,A,A,1,1,1
+male,high school,free/reduced,none,F,C,F,0,1,0
+female,some college,free/reduced,none,D,D,C,1,1,1
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,completed,B,B,A,1,1,1
+female,associate's degree,standard,none,B,A,B,1,1,1
+female,master's degree,free/reduced,none,F,D,C,0,1,1
+male,some high school,standard,completed,B,C,C,1,1,1
+female,associate's degree,standard,none,F,D,D,0,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,high school,free/reduced,none,F,F,F,0,0,0
+female,some high school,free/reduced,completed,D,C,C,1,1,1
+male,associate's degree,standard,completed,D,F,D,1,0,1
+female,some high school,standard,completed,D,C,B,1,1,1
+male,master's degree,standard,none,B,B,B,1,1,1
+female,master's degree,standard,none,C,C,C,1,1,1
+female,high school,free/reduced,completed,F,F,F,0,0,0
+female,bachelor's degree,free/reduced,completed,A,A,A,1,1,1
+female,some high school,free/reduced,none,D,B,B,1,1,1
+male,some college,standard,none,B,C,C,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+female,some college,standard,completed,C,B,A,1,1,1
+female,bachelor's degree,free/reduced,none,D,C,C,1,1,1
+male,bachelor's degree,standard,completed,C,D,C,1,1,1
+male,bachelor's degree,free/reduced,none,F,F,F,0,0,0
+female,some college,standard,none,D,B,B,1,1,1
+female,bachelor's degree,standard,completed,F,D,D,0,1,1
+female,bachelor's degree,free/reduced,completed,F,D,D,0,1,1
+female,associate's degree,free/reduced,none,F,D,F,0,1,0
+female,some college,standard,none,D,C,D,1,1,1
+male,bachelor's degree,standard,completed,A,A,A,1,1,1
+female,high school,standard,none,F,D,F,0,1,0
+female,associate's degree,standard,completed,F,C,B,0,1,1
+male,some college,standard,completed,A,A,A,1,1,1
+male,high school,free/reduced,none,D,C,D,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,high school,standard,none,C,D,D,1,1,1
+female,associate's degree,free/reduced,none,F,D,D,0,1,1
+male,high school,free/reduced,none,C,C,D,1,1,1
+male,some high school,standard,completed,C,D,D,1,1,1
+male,associate's degree,free/reduced,none,D,F,F,1,0,0
+female,high school,free/reduced,completed,D,D,C,1,1,1
+male,associate's degree,free/reduced,completed,F,F,F,0,0,0
+female,some high school,free/reduced,none,F,F,F,0,0,0
+male,some college,free/reduced,completed,D,C,C,1,1,1
+male,some college,free/reduced,none,D,F,D,1,0,1
+male,associate's degree,free/reduced,completed,D,C,C,1,1,1
+male,bachelor's degree,free/reduced,completed,C,C,C,1,1,1
+male,associate's degree,standard,completed,A,B,A,1,1,1
+male,some college,free/reduced,none,C,D,F,1,1,0
+male,associate's degree,standard,none,D,F,F,1,0,0
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,some college,standard,completed,B,B,B,1,1,1
+male,some high school,standard,completed,C,D,D,1,1,1
+male,master's degree,free/reduced,completed,C,D,C,1,1,1
+female,master's degree,standard,none,C,A,A,1,1,1
+male,high school,standard,none,B,D,D,1,1,1
+male,some high school,free/reduced,completed,D,D,D,1,1,1
+female,high school,standard,none,F,D,D,0,1,1
+female,associate's degree,standard,none,F,D,F,0,1,0
+male,high school,standard,none,B,B,B,1,1,1
+female,some college,free/reduced,none,F,F,D,0,0,1
+male,some high school,free/reduced,completed,F,F,F,0,0,0
+female,high school,free/reduced,completed,F,C,C,0,1,1
+male,high school,standard,none,A,C,C,1,1,1
+female,some college,standard,completed,C,C,B,1,1,1
+female,some high school,free/reduced,none,C,C,C,1,1,1
+male,high school,standard,completed,F,F,F,0,0,0
+female,some college,standard,none,D,D,D,1,1,1
+male,associate's degree,standard,none,C,F,D,1,0,1
+male,some college,standard,none,B,B,B,1,1,1
+female,master's degree,standard,none,A,A,A,1,1,1
+female,high school,standard,none,F,D,F,0,1,0
+male,high school,standard,none,C,B,C,1,1,1
+female,some college,standard,none,F,F,D,0,0,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,associate's degree,standard,none,A,A,A,1,1,1
+female,some high school,free/reduced,completed,D,C,C,1,1,1
+male,some college,standard,none,C,F,F,1,0,0
+female,some college,standard,none,D,C,C,1,1,1
+male,some high school,standard,completed,D,D,D,1,1,1
+male,some college,standard,none,D,D,D,1,1,1
+female,associate's degree,standard,none,D,C,D,1,1,1
+female,bachelor's degree,standard,none,C,B,B,1,1,1
+female,bachelor's degree,standard,none,B,A,A,1,1,1
+male,some high school,standard,completed,C,C,D,1,1,1
+female,high school,free/reduced,completed,F,F,D,0,0,1
+female,some college,free/reduced,none,F,D,D,0,1,1
+female,some college,standard,none,F,D,D,0,1,1
+female,some college,standard,completed,D,B,C,1,1,1
+male,some college,free/reduced,completed,D,D,D,1,1,1
+male,associate's degree,standard,none,D,D,F,1,1,0
+male,high school,standard,completed,F,F,F,0,0,0
+female,associate's degree,standard,none,A,A,A,1,1,1
+female,high school,free/reduced,none,F,F,F,0,0,0
+male,some high school,standard,none,B,C,C,1,1,1
+male,some high school,standard,completed,C,B,B,1,1,1
+female,some college,standard,completed,C,B,A,1,1,1
+female,some high school,standard,none,C,C,B,1,1,1
+male,high school,standard,none,F,F,F,0,0,0
+female,associate's degree,standard,none,F,F,F,0,0,0
+male,some high school,standard,completed,B,C,C,1,1,1
+female,some high school,free/reduced,none,F,F,F,0,0,0
+female,some college,free/reduced,completed,D,B,B,1,1,1
+male,high school,free/reduced,completed,B,B,C,1,1,1
+female,some high school,standard,completed,D,B,C,1,1,1
+female,associate's degree,free/reduced,none,F,C,C,0,1,1
+female,bachelor's degree,free/reduced,none,D,C,C,1,1,1
+male,high school,standard,none,D,D,D,1,1,1
+female,master's degree,standard,completed,B,A,A,1,1,1
+male,high school,free/reduced,none,D,F,F,1,0,0
+female,high school,free/reduced,completed,F,C,D,0,1,1
+female,some college,standard,completed,D,C,C,1,1,1
+female,some college,free/reduced,none,C,B,B,1,1,1
