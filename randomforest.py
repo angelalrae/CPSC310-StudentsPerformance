@@ -65,7 +65,6 @@ class Forest(object):
         for tree in self.forest_list:
             predictions.append([tree["tree"].classify(instance)])
 
-        print(predictions)
         return utils.majority_vote(predictions)
 
 
@@ -368,9 +367,9 @@ def clean_data(table, header):
     get rid of quotation marks on values, change strings to ints, 
     add categorical classes
     '''
-    utils.strip_quotation_marks_table(table)
-    utils.strip_quotation_marks_list(header)
-    utils.scores_to_numeric(table, header)
+    # utils.strip_quotation_marks_table(table)
+    # utils.strip_quotation_marks_list(header)
+    # utils.scores_to_numeric(table, header)
     utils.scores_pass_fail(table, header, "math score")
     utils.scores_pass_fail(table, header, "reading score")
     utils.scores_pass_fail(table, header, "writing score")
