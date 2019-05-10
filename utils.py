@@ -251,6 +251,20 @@ def scores_to_numeric(table, header):
         row[reading_index] = int(row[reading_index])
         row[writing_index] = int(row[writing_index])
 
+        
+def scores_pass_fail(table, header, score_type):
+    # add new column to header
+    score_index = header.index(score_type)
+    header.append(score_type + " class")
+
+     # for each row, add pass (0) or fail 
+    for row in table:
+        score = row[score_index]
+        if score >= 60:
+            row.append(0)
+        else:
+            row.append(1)
+            
 def add_grades(table, header, score_type):
     # add new column to header
     score_index = header.index(score_type)
