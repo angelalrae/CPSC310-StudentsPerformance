@@ -23,8 +23,8 @@ def clean_data(table, header):
     get rid of quotation marks on values, change strings to ints, 
     add categorical classes
     '''
-    strip_quotation_marks_table(table)
-    strip_quotation_marks_list(header)
+#     strip_quotation_marks_table(table)
+#     strip_quotation_marks_list(header)
     scores_to_numeric(table, header)
     add_grades(table, header, "math score")
     add_grades(table, header, "reading score")
