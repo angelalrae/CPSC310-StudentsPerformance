@@ -66,6 +66,7 @@ class Forest(object):
         for tree in self.forest_list:
             predictions.append([tree["tree"].classify(instance)])
 
+        print(predictions)
         return utils.majority_vote(predictions)
 
 
@@ -173,7 +174,7 @@ def entropy(table):
             e += c_ratio * math.log(c_ratio, 2)
     return -e
 
-def test_tree(header, training_table, test_table):
+def test_tree(header, training_table, test_table, class_label):
     '''
         given training and test sets, generate a decision tree and
         return a tuple containing the count of true positives, true
@@ -181,15 +182,15 @@ def test_tree(header, training_table, test_table):
     '''
     # generate decision tree
     model = TreeNode(training_table, header)
-    confusion_matrix = [[0 for x in range(4)] for y in range(4)]
+    confusion_matrix = [[0 for x in range(2)] for y in range(2)] #2 since known, pass/fail as classes
 
     # use test_table to generate confusion matrix to return
     for instance in test_table:
-        predicted = model.classify(instance) - 1
-        actual = instance[-1] - 1
-        if predicted != -1:
-            confusion_matrix[actual][predicted] += 1
+        predicted = model.classify(instance)
+        actual = instance[header.index(class_label)]
         
+        confusion_matrix[actual][predicted] += 1
+    
     return model, confusion_matrix
         
 def compute_bootstrap_sample(table):
@@ -284,22 +285,14 @@ def get_current_accuracy(con_mat):
     
     return acc(tp, tn, fp, fn)
 
-def print_mat_accuracy(con_mat):
+def print_mat_accuracy(con_mat, class_label):
     total = sum([sum(x) for x in con_mat])
-
-    tp = 0
-    tn = 0
-    fp = 0
-    fn = 0
-
-    for i in range(len(con_mat)):
-        newtp, newtn, newfp, newfn = one_mpg_acc(i, con_mat, total)
-        tp += newtp
-        tn += newtn
-        fp += newfp
-        fn += newfn
+    tp = con_mat[0][0]
+    fp = sum(con_mat[0]) - tp
+    fn = sum([x[0] for x in con_mat]) - tp
+    tn = total - (tp + fp + fn)
     
-    print_c_matrix(tp, tn, fp, fn)
+    print_c_matrix(tp, tn, fp, fn, class_label)
 
 def one_mpg_acc(i, con_mat, total):
     tp = con_mat[i][i]
@@ -308,11 +301,12 @@ def one_mpg_acc(i, con_mat, total):
     tn = total - (tp + fp + fn)
     return tp, tn, fp, fn
 
-def print_c_matrix(tp, tn, fp, fn):  
+def print_c_matrix(tp, tn, fp, fn, class_label):  
     '''
         Prints a formatted confusion matrix.
     '''
-    print('\n                        Predicted       ')  
+    print('\n', class_label)
+    print('                        Predicted       ')  
     print('         |-------------------------------------|')
     print('         |       |    Yes  |    No   |  Total  |')  
     print('         |-------------------------------------|')
@@ -323,10 +317,11 @@ def print_c_matrix(tp, tn, fp, fn):
     print('         | Total |  %5d  |  %5d  |  %5d  |' % (tp+fp, fn+tn, tp+tn+fp+fn))
     print('         |-------------------------------------|\n')
     print('              Accuracy     : %.5f' % acc(tp, tn, fp, fn))
-    print('              Standard Err : %.5f\n' % s_err(tp, tn, fp, fn))
-    print('              Precision : %.5f\n' % precision(tp, tn, fp, fn))
+    print('              Standard Err : %.5f' % s_err(tp, tn, fp, fn))
+    print('              Precision : %.5f' % precision(tp, tn, fp, fn))
     print('              Recall : %.5f\n' % recall(tp, tn, fp, fn))
-
+    
+    
 def acc(tp, tn, fp, fn):
     '''
         calculate accuracy (correct classifications / all classifications)
@@ -352,11 +347,11 @@ def precision(tp, tn, fp, fn):
 def recall(tp, tn, fp, fn):
     return tp / (tp + fn)
 
-def compute_stratified(table, header, k):
+def compute_stratified(table, header, k, class_label):
     '''
     generates stratified test and remainder sets
     '''
-    stratified_list = stratify(table, header, "AvgScore", k) #returns a list of stratified sets
+    stratified_list = stratify(table, header, class_label, k) #returns a list of stratified sets
     
     # k-1/k goes to remainder
     remainder = stratified_list[0]
@@ -368,18 +363,23 @@ def compute_stratified(table, header, k):
 
     return test_set, remainder
 
-def main():
-    # import table, get header, add average scores
-    table_name = 'StudentsPerformance.csv'
-    students = u.read_table(table_name)
-    header = students[0][:-3] + ['AvgScore']
-    students = group_scores(students[1:])
-    
+
+def clean_data(table, header):
+    '''
+    get rid of quotation marks on values, change strings to ints, 
+    add categorical classes
+    '''
+    u.strip_quotation_marks_table(table)
+    u.strip_quotation_marks_list(header)
+    u.scores_to_numeric(table, header)
+    u.scores_pass_fail(table, header, "math score")
+    u.scores_pass_fail(table, header, "reading score")
+    u.scores_pass_fail(table, header, "writing score")
+
+def classify_using_forest(table, header, n, m, class_label):
     # get stratified list for sample and test set for ensemble
-    test_set, remainder = compute_stratified(students, header, 3)
+    test_set, remainder = compute_stratified(table, header, 3, class_label)
         
-    n = 100 # number of decision trees to generate
-    m = 80 # number of best trees to save
     mForest = Forest(m) # initialize Forest object
 
     # create N decision trees using bootstrap sample to train
@@ -387,7 +387,7 @@ def main():
     for i in range(n):
         # use bagging to get training set, then create tree
         train_set, validation_set = compute_bootstrap_sample(remainder)
-        tree, temp_matrix = test_tree(header, train_set, validation_set)
+        tree, temp_matrix = test_tree(header, train_set, validation_set, class_label)
             # temp matrix is a tuple containing tp, tn, fp, and fn
 
         # once m trees, check accuracy of new tree before adding it to forest
@@ -399,14 +399,32 @@ def main():
             mForest.add_tree(tree, temp_matrix)
 
     # test unseen instances using forest
-    confusion_matrix = [[0 for x in range(4)] for y in range(4)]        
+    confusion_matrix = [[0 for x in range(2)] for y in range(2)] #2 since known, pass/fail as classes
     for instance in test_set:
-        predicted = mForest.classify(instance) - 1
-        actual = instance[-1] - 1 #subtract 1 to match value to index
+        predicted = mForest.classify(instance) # should return 0 (pass) or 1 (fail)
+        actual = instance[header.index(class_label)]
 
         if predicted != -1:
             confusion_matrix[actual][predicted] += 1
-    print_mat_accuracy(confusion_matrix)
+
+    print_mat_accuracy(confusion_matrix, class_label)
+
+def main():
+    # import table, get header, add average scores
+    table_name = 'StudentsPerformance.csv'
+    students = u.read_table(table_name)
+    header = students.pop(0)
+    clean_data(students, header)
+    
+    # initialize variables
+    n = 20 # number of decision trees to generate
+    m = 15 # number of best trees to save
+   
+
+    # for each class label, create forest and classify test instances to get accuracy
+    class_labels = ["reading score class", "writing score class", "math score class"]
+    for label in class_labels:
+        classify_using_forest(students, header, n, m, label)
 
 if __name__ == "__main__":
     main()
