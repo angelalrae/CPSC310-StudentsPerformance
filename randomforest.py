@@ -2,8 +2,7 @@
 # 5.9.2019
 
 import math
-import utils2 as utils
-import utils as u
+import utils
 import numpy as np
 import random
 import tabulate
@@ -223,7 +222,7 @@ def stratify(table, header, class_label, k):
     returns stratified_list a list of tables
     '''
     # group table by class label, partitioned table is a list of tables
-    partitioned_table = u.group_by(table, header, class_label)
+    partitioned_table = utils.group_by(table, header, class_label)
     
     # for each partition, loop through rows and append to different table in stratified list (also a list of tables)
     stratified_list = [[] for i in range(k)]
@@ -369,12 +368,12 @@ def clean_data(table, header):
     get rid of quotation marks on values, change strings to ints, 
     add categorical classes
     '''
-    u.strip_quotation_marks_table(table)
-    u.strip_quotation_marks_list(header)
-    u.scores_to_numeric(table, header)
-    u.scores_pass_fail(table, header, "math score")
-    u.scores_pass_fail(table, header, "reading score")
-    u.scores_pass_fail(table, header, "writing score")
+    utils.strip_quotation_marks_table(table)
+    utils.strip_quotation_marks_list(header)
+    utils.scores_to_numeric(table, header)
+    utils.scores_pass_fail(table, header, "math score")
+    utils.scores_pass_fail(table, header, "reading score")
+    utils.scores_pass_fail(table, header, "writing score")
 
 def classify_using_forest(table, header, n, m, class_label):
     # get stratified list for sample and test set for ensemble
@@ -412,7 +411,7 @@ def classify_using_forest(table, header, n, m, class_label):
 def main():
     # import table, get header, add average scores
     table_name = 'StudentsPerformance.csv'
-    students = u.read_table(table_name)
+    students = utils.read_table(table_name)
     header = students.pop(0)
     clean_data(students, header)
     
